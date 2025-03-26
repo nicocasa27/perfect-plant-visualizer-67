@@ -7,15 +7,16 @@ const StatsSection = () => {
   return (
     <section className="py-16 bg-cream/30">
       <div className="container mx-auto px-4">
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-medium text-center mb-16">
+        <div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-medium text-center mb-12">
             Proven Results in Medical Settings
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+          {/* Stats Row - Rearranged to be inline */}
+          <div className="flex flex-wrap justify-center items-start gap-8 md:gap-12 lg:gap-16 mb-12">
             {/* Accuracy Stat */}
             <motion.div 
-              className="text-center"
+              className="text-center flex-1 min-w-[150px]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -30,7 +31,7 @@ const StatsSection = () => {
             
             {/* Time Saved Stat */}
             <motion.div 
-              className="text-center"
+              className="text-center flex-1 min-w-[150px]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -45,7 +46,7 @@ const StatsSection = () => {
             
             {/* Revenue Increase Stat */}
             <motion.div 
-              className="text-center"
+              className="text-center flex-1 min-w-[150px]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -60,7 +61,7 @@ const StatsSection = () => {
             
             {/* Clinical Trials Stat */}
             <motion.div 
-              className="text-center"
+              className="text-center flex-1 min-w-[150px]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -76,12 +77,12 @@ const StatsSection = () => {
         </div>
         
         {/* Compliance Section */}
-        <div className="mt-16 text-center">
+        <div className="mt-12 text-center">
           <h3 className="text-2xl font-medium mb-8">Regulatory Compliance</h3>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-6">
             <div className="flex flex-col items-center">
               <img 
-                src="/lovable-uploads/c23ad9c3-6ef9-4edd-ae89-8bb43cedae10.png" 
+                src="/lovable-uploads/17b3e330-6089-4e14-88f5-6a2b3c92115f.png" 
                 alt="GDPR Compliance" 
                 className="h-32 mb-2"
               />
@@ -96,10 +97,16 @@ const StatsSection = () => {
               <p className="font-medium">HIPAA Compliant</p>
             </div>
           </div>
-          <p className="text-gray-600 max-w-2xl mx-auto mt-4">
-            Your data is protected with enterprise-grade security and encryption.
-            We maintain strict compliance with healthcare data protection regulations worldwide.
-          </p>
+          <div className="text-gray-600 max-w-3xl mx-auto mt-6 space-y-4">
+            <p>
+              Your data is protected with enterprise-grade security and encryption.
+              We maintain strict compliance with healthcare data protection regulations worldwide.
+            </p>
+            <p>
+              We have a strict no-retention policy — we don't train our models on patient data or save any patient information.
+              Your sensitive medical information remains private and secure at all times.
+            </p>
+          </div>
         </div>
       </div>
     </section>
