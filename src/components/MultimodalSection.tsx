@@ -2,7 +2,7 @@
 "use client";
 
 import React, { forwardRef, useRef } from "react";
-import { Headphones, FileText, Video, Image, MedicalCross, Mic } from "lucide-react";
+import { Headphones, FileText, Video, Image, Cross, Mic } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
 
@@ -91,7 +91,7 @@ export function MultimodalSection() {
         {/* Output Modalities */}
         <div className="absolute bottom-20 left-1/2 transform -translate-x-1/4">
           <Circle ref={medicationOutputRef} className="size-16">
-            <MedicalCross className="text-dark" size={28} />
+            <Cross className="text-dark" size={28} />
             <span className="absolute -bottom-8 text-sm font-medium">Medication Referrals</span>
           </Circle>
         </div>
