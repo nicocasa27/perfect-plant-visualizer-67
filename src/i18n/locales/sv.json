@@ -3,10 +3,10 @@
   "watchVideo": "Se hur vår plattform fungerar",
   "navigation": {
     "services": "Tjänster",
-    "blog": "Blogg",
+    "research": "Forskning",
     "about": "Om oss",
     "contact": "Kontakt",
-    "appointment": "Boka tid"
+    "appointment": "Kom igång"
   },
   "toast": {
     "redirected": "Omdirigerad till den svenska versionen baserat på din plats"
