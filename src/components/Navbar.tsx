@@ -5,7 +5,7 @@ import { ChevronRight } from 'lucide-react';
 
 const Navbar = () => {
   return (
-    <header className="w-full border-b border-dark/20 py-5">
+    <header className="w-full py-5">
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <div className="h-7 w-7 flex items-center justify-center">
