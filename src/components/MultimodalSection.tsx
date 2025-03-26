@@ -69,7 +69,7 @@ const MultimodalSection = () => {
   return (
     <section 
       ref={containerRef} 
-      className="relative py-20 md:py-32 min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative py-20 md:py-32 min-h-screen flex flex-col items-center justify-center bg-cream-light/50 my-12 rounded-lg shadow-md overflow-hidden"
     >
       <div className="container mx-auto px-4">
         <motion.h2 
@@ -102,16 +102,16 @@ const MultimodalSection = () => {
             className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-12 md:gap-16"
           >
             <div ref={audioInputRef}>
-              <ModalityCircle icon={Mic} label="Audio Input" />
+              <ModalityCircle icon={Mic} label="Voice Consultation" />
             </div>
             <div ref={textInputRef}>
-              <ModalityCircle icon={FileText} label="Text Input" />
+              <ModalityCircle icon={FileText} label="Medical Records" />
             </div>
             <div ref={videoInputRef}>
-              <ModalityCircle icon={Video} label="Video Input" />
+              <ModalityCircle icon={Video} label="Intraoperative Video" />
             </div>
             <div ref={imageInputRef}>
-              <ModalityCircle icon={Image} label="Image Input" />
+              <ModalityCircle icon={Image} label="MRI/CT/Ultrasound" />
             </div>
           </motion.div>
           
@@ -124,10 +124,10 @@ const MultimodalSection = () => {
               <ModalityCircle icon={Cross} label="Diagnosis" />
             </div>
             <div ref={medicationOutputRef}>
-              <ModalityCircle icon={FileOutput} label="Medication" />
+              <ModalityCircle icon={FileOutput} label="Treatment Plan" />
             </div>
             <div ref={audioOutputRef}>
-              <ModalityCircle icon={Headphones} label="Audio Output" />
+              <ModalityCircle icon={Headphones} label="Audio Feedback" />
             </div>
           </motion.div>
           
@@ -139,6 +139,8 @@ const MultimodalSection = () => {
                 fromRef={audioInputRef}
                 toRef={centerCircleRef}
                 curvature={50}
+                gradientStartColor="#9b87f5"
+                gradientStopColor="#6E59A5"
               />
               <AnimatedBeam
                 containerRef={containerRef}
@@ -174,6 +176,8 @@ const MultimodalSection = () => {
                 curvature={50}
                 reverse={true}
                 delay={0.4}
+                gradientStartColor="#9b87f5"
+                gradientStopColor="#6E59A5"
               />
               <AnimatedBeam
                 containerRef={containerRef}
