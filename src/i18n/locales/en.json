@@ -14,21 +14,21 @@
   "features": {
     "heading": "Intelligent Medical Platform Features",
     "subheading": "Our advanced AI-driven platform offers a wide range of capabilities to enhance healthcare delivery",
-    "ai": {
-      "title": "AI-Powered Analysis",
-      "description": "Powerful diagnostic algorithms that analyze patient data in real-time for accurate insights"
+    "multimodal": {
+      "title": "Multimodal Analysis",
+      "description": "Process and analyze multiple data types simultaneously including text, images, audio, and video for comprehensive diagnostics"
     },
-    "diagnosis": {
-      "title": "Fast Diagnosis",
-      "description": "Receive preliminary diagnoses in minutes with high accuracy and reliability"
+    "actions": {
+      "title": "Actionable Insights",
+      "description": "Automatically identify and recommend clinical actions based on analyzed data, helping physicians make informed decisions"
+    },
+    "imaging": {
+      "title": "Advanced Imaging",
+      "description": "Process and analyze medical imaging with state-of-the-art AI to detect patterns invisible to the human eye"
     },
     "records": {
-      "title": "Medical Records",
-      "description": "Secure storage and intelligent analysis of medical history for comprehensive care"
-    },
-    "telehealth": {
-      "title": "Virtual Consultations",
-      "description": "Connect with physicians remotely with AI-enhanced consultation capabilities"
+      "title": "Intelligent Records",
+      "description": "Secure storage and intelligent analysis of medical history for comprehensive care and personalized treatment plans"
     }
   },
   "testimonials": {

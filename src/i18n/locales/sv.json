@@ -14,21 +14,21 @@
   "features": {
     "heading": "Intelligent medicinsk plattforms funktioner",
     "subheading": "Vår avancerade AI-drivna plattform erbjuder ett brett utbud av funktioner för att förbättra vårdleveransen",
-    "ai": {
-      "title": "AI-driven analys",
-      "description": "Kraftfulla diagnostiska algoritmer som analyserar patientdata i realtid för noggranna insikter"
+    "multimodal": {
+      "title": "Multimodal analys",
+      "description": "Bearbeta och analysera flera datatyper samtidigt inklusive text, bilder, ljud och video för omfattande diagnostik"
     },
-    "diagnosis": {
-      "title": "Snabb diagnos",
-      "description": "Få preliminära diagnoser på minuter med hög noggrannhet och tillförlitlighet"
+    "actions": {
+      "title": "Handlingsbara insikter",
+      "description": "Identifiera och rekommendera automatiskt kliniska åtgärder baserat på analyserad data, vilket hjälper läkare att fatta informerade beslut"
+    },
+    "imaging": {
+      "title": "Avancerad bildbehandling",
+      "description": "Bearbeta och analysera medicinsk bilddiagnostik med toppmodern AI för att upptäcka mönster som är osynliga för det mänskliga ögat"
     },
     "records": {
       "title": "Medicinska journaler",
-      "description": "Säker lagring och intelligent analys av medicinsk historia för omfattande vård"
-    },
-    "telehealth": {
-      "title": "Virtuella konsultationer",
-      "description": "Anslut med läkare på distans med AI-förbättrade konsultationsmöjligheter"
+      "description": "Säker lagring och intelligent analys av medicinsk historia för omfattande vård och personliga behandlingsplaner"
     }
   },
   "testimonials": {

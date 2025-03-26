@@ -14,21 +14,21 @@
   "features": {
     "heading": "Funktionen der intelligenten medizinischen Plattform",
     "subheading": "Unsere fortschrittliche KI-gestützte Plattform bietet eine breite Palette von Fähigkeiten zur Verbesserung der Gesundheitsversorgung",
-    "ai": {
-      "title": "KI-gestützte Analyse",
-      "description": "Leistungsstarke Diagnosealgorithmen, die Patientendaten in Echtzeit für genaue Erkenntnisse analysieren"
+    "multimodal": {
+      "title": "Multimodale Analyse",
+      "description": "Verarbeitung und Analyse mehrerer Datentypen gleichzeitig, einschließlich Text, Bilder, Audio und Video für umfassende Diagnostik"
     },
-    "diagnosis": {
-      "title": "Schnelle Diagnose",
-      "description": "Erhalten Sie vorläufige Diagnosen in Minuten mit hoher Genauigkeit und Zuverlässigkeit"
+    "actions": {
+      "title": "Handlungsrelevante Erkenntnisse",
+      "description": "Automatische Identifizierung und Empfehlung klinischer Maßnahmen auf Basis analysierter Daten, um Ärzten bei fundierten Entscheidungen zu helfen"
+    },
+    "imaging": {
+      "title": "Fortschrittliche Bildgebung",
+      "description": "Verarbeitung und Analyse medizinischer Bilder mit modernster KI, um Muster zu erkennen, die für das menschliche Auge unsichtbar sind"
     },
     "records": {
       "title": "Medizinische Aufzeichnungen",
-      "description": "Sichere Speicherung und intelligente Analyse der Krankengeschichte für umfassende Versorgung"
-    },
-    "telehealth": {
-      "title": "Virtuelle Konsultationen",
-      "description": "Verbinden Sie sich mit Ärzten aus der Ferne mit KI-verbesserten Beratungsfunktionen"
+      "description": "Sichere Speicherung und intelligente Analyse der Krankengeschichte für umfassende Versorgung und personalisierte Behandlungspläne"
     }
   },
   "testimonials": {

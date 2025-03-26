@@ -14,21 +14,21 @@
   "features": {
     "heading": "Funkcje inteligentnej platformy medycznej",
     "subheading": "Nasza zaawansowana platforma oparta na AI oferuje szeroki zakres możliwości usprawniających świadczenie opieki zdrowotnej",
-    "ai": {
-      "title": "Analiza oparta na AI",
-      "description": "Potężne algorytmy diagnostyczne analizujące dane pacjentów w czasie rzeczywistym dla dokładnych spostrzeżeń"
+    "multimodal": {
+      "title": "Analiza multimodalna",
+      "description": "Przetwarzanie i analiza wielu typów danych jednocześnie, w tym tekstu, obrazów, dźwięku i wideo dla kompleksowej diagnostyki"
     },
-    "diagnosis": {
-      "title": "Szybka diagnoza",
-      "description": "Otrzymuj wstępne diagnozy w ciągu kilku minut z wysoką dokładnością i niezawodnością"
+    "actions": {
+      "title": "Praktyczne spostrzeżenia",
+      "description": "Automatyczne identyfikowanie i rekomendowanie działań klinicznych na podstawie analizowanych danych, pomagając lekarzom w podejmowaniu świadomych decyzji"
+    },
+    "imaging": {
+      "title": "Zaawansowane obrazowanie",
+      "description": "Przetwarzanie i analiza obrazów medycznych przy użyciu najnowocześniejszej AI w celu wykrycia wzorców niewidocznych dla ludzkiego oka"
     },
     "records": {
       "title": "Dokumentacja medyczna",
-      "description": "Bezpieczne przechowywanie i inteligentna analiza historii medycznej dla kompleksowej opieki"
-    },
-    "telehealth": {
-      "title": "Wirtualne konsultacje",
-      "description": "Łącz się z lekarzami zdalnie z funkcjami konsultacji wspomaganymi przez AI"
+      "description": "Bezpieczne przechowywanie i inteligentna analiza historii medycznej dla kompleksowej opieki i spersonalizowanych planów leczenia"
     }
   },
   "testimonials": {
