@@ -97,14 +97,9 @@ const StatsSection = () => {
               <p className="font-medium">HIPAA Compliant</p>
             </div>
           </div>
-          <div className="text-gray-600 max-w-3xl mx-auto mt-6 space-y-4">
+          <div className="text-gray-600 max-w-3xl mx-auto mt-6">
             <p>
-              Your data is protected with enterprise-grade security and encryption.
-              We maintain strict compliance with healthcare data protection regulations worldwide.
-            </p>
-            <p>
-              We have a strict no-retention policy — we don't train our models on patient data or save any patient information.
-              Your sensitive medical information remains private and secure at all times.
+              Your data is protected with enterprise-grade security and encryption. We maintain strict compliance with healthcare data protection regulations worldwide. We have a strict no-retention policy — we don't train our models on patient data or save any patient information. Your sensitive medical information remains private and secure at all times.
             </p>
           </div>
         </div>
