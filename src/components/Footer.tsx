@@ -15,7 +15,7 @@ const Footer = () => {
     <footer className="relative py-12 z-10 overflow-hidden">
       {/* Large background Sarovi text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
-        <h1 className="text-[25vw] font-bold text-gold/10 select-none">Sarovi</h1>
+        <h1 className="text-[35vw] font-bold text-gold/20 select-none font-serif tracking-tighter">Sarovi</h1>
       </div>
       
       {/* Divider line */}
