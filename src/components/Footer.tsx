@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -11,12 +12,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   
   return (
-    <footer className="relative py-12 z-10 overflow-hidden">
-      {/* Large background Sarovi text */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
-        <h1 className="text-[45vw] font-bold text-gold/20 select-none tracking-tighter" style={{ fontFamily: 'Instrument Serif, serif', position: 'absolute', bottom: '-10vh', lineHeight: '0.8' }}>Sarovi</h1>
-      </div>
-      
+    <footer className="relative py-12 z-10">
       {/* Divider line */}
       <div className="container mx-auto px-4">
         <Separator className="mb-12 bg-gold/30" />
