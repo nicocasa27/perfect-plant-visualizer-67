@@ -45,16 +45,16 @@ const CallToAction = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link to={`/${currentLanguage}/appointment`}>
-              <Button size="lg" className="bg-dark text-white hover:bg-dark/80 rounded-full px-8 py-6 h-auto text-lg">
+              <Button className="bg-dark text-white hover:bg-dark/80 rounded-lg px-6 py-2 h-auto text-sm font-medium uppercase">
                 {t('cta.button')}
-                <ChevronRight className="ml-2 h-5 w-5" />
+                <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
             </Link>
             
             <a href="https://test.sarovi.pl" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline" className="bg-white/80 backdrop-blur-sm text-dark hover:bg-white rounded-full px-8 py-6 h-auto text-lg border-2 border-dark/20">
+              <Button variant="outline" className="bg-white/80 backdrop-blur-sm text-dark hover:bg-white rounded-lg px-6 py-2 h-auto text-sm font-medium uppercase border-2 border-dark/20">
                 {t('cta.startNow')}
-                <ExternalLink className="ml-2 h-5 w-5" />
+                <ExternalLink className="ml-1 h-4 w-4" />
               </Button>
             </a>
           </motion.div>

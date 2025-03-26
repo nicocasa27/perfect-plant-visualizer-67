@@ -14,25 +14,19 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ title, description, delay, imagePath, gradient }: FeatureCardProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: delay }}
-      viewport={{ once: true, margin: "-100px" }}
-      className="h-full min-w-[280px] flex-1"
-    >
+    <div className="h-full min-w-[280px] flex-1">
       <Card className="overflow-hidden h-full border-0 shadow-md relative group">
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-500 group-hover:scale-110 group-hover:opacity-80" 
           style={{ backgroundImage: `url('${imagePath}')` }} 
         />
-        <div className={`absolute inset-0 ${gradient} opacity-90 group-hover:opacity-95 transition-all duration-300`}></div>
+        <div className={`absolute inset-0 ${gradient} opacity-75 group-hover:opacity-80 transition-all duration-300`}></div>
         <CardContent className="p-6 relative z-10 h-full flex flex-col justify-end min-h-[320px] backdrop-blur-sm">
-          <h3 className="text-xl font-medium mb-2 text-white">{title}</h3>
-          <p className="text-white/90 font-medium">{description}</p>
+          <h3 className="text-2xl font-bold mb-3 text-white">{title}</h3>
+          <p className="text-white/95 text-lg font-medium">{description}</p>
         </CardContent>
       </Card>
-    </motion.div>
+    </div>
   );
 };
 
@@ -80,25 +74,53 @@ const FeaturesSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-medium mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             {t('features.heading')}
           </h2>
-          <p className="text-lg text-dark/80 max-w-2xl mx-auto">
+          <p className="text-xl text-dark/80 max-w-2xl mx-auto">
             {t('features.subheading')}
           </p>
         </motion.div>
         
-        <div className="flex flex-col md:flex-row gap-6 overflow-x-auto pb-4 snap-x">
-          {features.map((feature, index) => (
-            <FeatureCard
-              key={index}
-              title={feature.title}
-              description={feature.description}
-              delay={feature.delay}
-              imagePath={feature.imagePath}
-              gradient={feature.gradient}
-            />
-          ))}
+        <div className="relative">
+          <div className="flex overflow-hidden">
+            <motion.div
+              className="flex min-w-full py-4 gap-6"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 40,
+                  ease: "linear",
+                },
+              }}
+            >
+              {/* First set of features */}
+              {features.map((feature, index) => (
+                <FeatureCard
+                  key={`feature-1-${index}`}
+                  title={feature.title}
+                  description={feature.description}
+                  delay={feature.delay}
+                  imagePath={feature.imagePath}
+                  gradient={feature.gradient}
+                />
+              ))}
+              
+              {/* Duplicate set for seamless loop */}
+              {features.map((feature, index) => (
+                <FeatureCard
+                  key={`feature-2-${index}`}
+                  title={feature.title}
+                  description={feature.description}
+                  delay={feature.delay}
+                  imagePath={feature.imagePath}
+                  gradient={feature.gradient}
+                />
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
