@@ -76,15 +76,15 @@
   @keyframes breathing {
     0% {
       transform: scale(1);
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0.1);
     }
     50% {
       transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
     100% {
       transform: scale(1);
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0.1);
     }
   }
   
@@ -107,5 +107,35 @@
   
   .title-xl {
     @apply text-[12vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] font-medium tracking-tight;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeOutDown {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeInUp 0.5s ease forwards;
+  }
+
+  .animate-fade-out {
+    animation: fadeOutDown 0.5s ease forwards;
   }
 }
