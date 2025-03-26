@@ -69,6 +69,25 @@
     }
   }
   
+  .breathing-animation {
+    animation: breathing 4s ease-in-out infinite;
+  }
+  
+  @keyframes breathing {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+  
   .nav-item {
     @apply relative py-2 px-1 text-dark font-medium transition-colors duration-300;
   }
