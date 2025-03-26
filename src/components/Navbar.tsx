@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
@@ -8,15 +7,11 @@ const Navbar = () => {
     <header className="w-full border-b border-dark/20 py-5">
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <div className="h-7 w-7">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
-              <path d="M12 4L4 12L12 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M20 12H4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+          <div className="h-7 w-7 flex items-center justify-center">
+            <span className="text-xl">𐰆𐱃</span>
           </div>
           <div className="flex flex-col leading-none">
             <span className="font-medium text-sm">SAROVI</span>
-            <span className="font-medium text-sm">MEDICAL AI</span>
           </div>
         </div>
         
