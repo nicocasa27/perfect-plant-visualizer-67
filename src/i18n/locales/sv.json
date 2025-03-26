@@ -49,5 +49,22 @@
     "subheading": "Boka en demonstration för att se hur vår intelligenta medicinska plattform kan omvandla din praktik",
     "button": "Boka en demo",
     "startNow": "Börja nu"
+  },
+  "footer": {
+    "description": "AI-driven medicinsk plattform som förbättrar vården med intelligent diagnostik.",
+    "quickLinks": "Snabblänkar",
+    "legal": "Juridiskt",
+    "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
+    "cookies": "Cookie-policy",
+    "contact": "Kontakta oss",
+    "rights": "Alla rättigheter förbehållna",
+    "disclaimer": "Ansvarsfriskrivning: Sarovi är inte en ersättning för medicinska experter. Det kan producera felaktig information. Även om det används i kliniska prövningar bör alla medicinska beslut fattas av kvalificerade vårdgivare."
+  },
+  "navbar": {
+    "services": "Tjänster",
+    "research": "Forskning",
+    "about": "Om oss",
+    "contact": "Kontakt"
   }
 }

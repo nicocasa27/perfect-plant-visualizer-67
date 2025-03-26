@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import PartnersSection from '../components/PartnersSection';
+import StatsSection from '../components/StatsSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer';
@@ -35,6 +36,7 @@ const LanguageIndex = () => {
           <VideoPlayerDemo />
         </div>
         <PartnersSection />
+        <StatsSection />
         <TestimonialsSection />
         <CallToAction />
       </main>
