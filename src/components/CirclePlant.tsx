@@ -6,7 +6,7 @@ const CirclePlant = () => {
   
   return (
     <div ref={containerRef} className="relative inline-block">
-      <div className="w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full bg-black breathing-animation shadow-lg"></div>
+      <div className="w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full bg-black breathing-animation shadow-lg"></div>
     </div>
   );
 };
