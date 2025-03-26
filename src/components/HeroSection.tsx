@@ -2,7 +2,17 @@
 import React, { useState, useEffect } from 'react';
 import CirclePlant from './CirclePlant';
 
-const roles = ["Assistant", "Companion", "Friend", "Colleague"];
+const roles = [
+  "Assistant", 
+  "Companion", 
+  "Friend", 
+  "Colleague", 
+  "Partner", 
+  "Advisor", 
+  "Consultant", 
+  "Helper", 
+  "Expert"
+];
 
 const HeroSection = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -31,7 +41,7 @@ const HeroSection = () => {
                 <CirclePlant />
               </div>
               <span className="inline-block min-w-40 px-4 py-2 bg-gray-100 rounded-lg shadow-sm">
-                <span className={`inline-block text-blue-600 ${isChanging ? 'animate-fade-out' : 'animate-fade-in'}`}>
+                <span className={`inline-block text-white ${isChanging ? 'animate-fade-out' : 'animate-fade-in'}`}>
                   {roles[currentRoleIndex]}
                 </span>
               </span>
