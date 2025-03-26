@@ -21,7 +21,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-20 overflow-hidden min-h-[70vh] flex items-center justify-center bg-[#927a4c]">
+    <section className="relative py-16 md:py-20 overflow-hidden min-h-[70vh] flex items-center justify-center bg-[#f2e5cc]">
       <div className="container mx-auto">
         <div className="relative flex flex-col items-center">
           <div className="z-10 text-center">
@@ -30,8 +30,8 @@ const HeroSection = () => {
               <div className="flex justify-center items-center mb-2">
                 <CirclePlant />
               </div>
-              <span className="inline-block min-w-40 px-4 py-2 bg-[#f2e5cc] rounded-lg shadow-sm">
-                <span className={`inline-block text-black ${isChanging ? 'animate-fade-out' : 'animate-fade-in'}`}>
+              <span className="inline-block min-w-40 px-4 py-2 bg-gray-100 rounded-lg shadow-sm">
+                <span className={`inline-block text-blue-600 ${isChanging ? 'animate-fade-out' : 'animate-fade-in'}`}>
                   {roles[currentRoleIndex]}
                 </span>
               </span>
