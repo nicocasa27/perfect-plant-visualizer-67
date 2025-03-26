@@ -6,7 +6,10 @@
     "blog": "Blog",
     "about": "O nas",
     "contact": "Kontakt",
-    "appointment": "Umów wizytę"
+    "appointment": "Umów wizytę",
+    "home": "Strona główna",
+    "pricing": "Cennik",
+    "research": "Badania"
   },
   "toast": {
     "redirected": "Przekierowano do polskiej wersji na podstawie Twojej lokalizacji"

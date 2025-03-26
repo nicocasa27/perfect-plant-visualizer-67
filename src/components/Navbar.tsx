@@ -1,22 +1,13 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ChevronDown, Stethoscope, LineChart, Image } from 'lucide-react';
+import { ChevronRight, ChevronDown, CreditCard } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const [isOpen, setIsOpen] = useState(false);
-  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
 
   return (
     <header className="w-full py-5">
@@ -32,56 +23,7 @@ const Navbar = () => {
         
         <nav className="hidden md:flex items-center space-x-8">
           <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}`} className="nav-item uppercase text-sm">{t('navigation.home', 'Home')}</Link>
-          
-          <NavigationMenu className="z-50">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger 
-                  onMouseEnter={() => setIsSolutionsOpen(true)}
-                  className="nav-item uppercase text-sm bg-transparent hover:bg-transparent focus:bg-transparent"
-                >
-                  {t('navigation.solutions')}
-                </NavigationMenuTrigger>
-                {isSolutionsOpen && (
-                  <NavigationMenuContent 
-                    onMouseLeave={() => setIsSolutionsOpen(false)} 
-                    className="bg-white p-4 rounded-md shadow-lg z-50"
-                  >
-                    <div className="grid grid-cols-3 gap-6 w-[600px]">
-                      <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/diagnostic`} className="flex items-start p-3 rounded-md hover:bg-gray-50 transition-colors">
-                        <div className="mr-3 text-gold-light">
-                          <Stethoscope size={24} />
-                        </div>
-                        <div>
-                          <div className="font-medium">Diagnostic AI</div>
-                          <p className="text-xs text-dark/70">Advanced diagnostic tools powered by artificial intelligence</p>
-                        </div>
-                      </Link>
-                      <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/predictive`} className="flex items-start p-3 rounded-md hover:bg-gray-50 transition-colors">
-                        <div className="mr-3 text-gold-light">
-                          <LineChart size={24} />
-                        </div>
-                        <div>
-                          <div className="font-medium">Predictive Analytics</div>
-                          <p className="text-xs text-dark/70">Forecasting health outcomes through pattern recognition</p>
-                        </div>
-                      </Link>
-                      <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/imaging`} className="flex items-start p-3 rounded-md hover:bg-gray-50 transition-colors">
-                        <div className="mr-3 text-gold-light">
-                          <Image size={24} />
-                        </div>
-                        <div>
-                          <div className="font-medium">Medical Imaging</div>
-                          <p className="text-xs text-dark/70">Enhanced medical imaging analysis and interpretation</p>
-                        </div>
-                      </Link>
-                    </div>
-                  </NavigationMenuContent>
-                )}
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-          
+          <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/pricing`} className="nav-item uppercase text-sm">{t('navigation.pricing', 'Pricing')}</Link>
           <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/research`} className="nav-item uppercase text-sm">{t('navigation.research')}</Link>
           <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/about`} className="nav-item uppercase text-sm">{t('navigation.about')}</Link>
           <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/contact`} className="nav-item uppercase text-sm">{t('navigation.contact')}</Link>
@@ -106,31 +48,10 @@ const Navbar = () => {
         <div className="md:hidden bg-white shadow-lg rounded-b-lg mt-1 p-4 absolute left-0 right-0 z-50">
           <nav className="flex flex-col space-y-3">
             <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}`} className="nav-item uppercase text-sm">{t('navigation.home', 'Home')}</Link>
-            <div className="nav-item uppercase text-sm flex flex-col">
-              <button 
-                className="flex justify-between items-center" 
-                onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
-              >
-                {t('navigation.solutions')}
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              {isSolutionsOpen && (
-                <div className="pl-4 mt-2 space-y-2 bg-white">
-                  <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/diagnostic`} className="flex items-center py-1 text-dark/80 hover:text-gold transition-colors duration-200">
-                    <Stethoscope size={16} className="mr-2 text-gold-light" />
-                    Diagnostic AI
-                  </Link>
-                  <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/predictive`} className="flex items-center py-1 text-dark/80 hover:text-gold transition-colors duration-200">
-                    <LineChart size={16} className="mr-2 text-gold-light" />
-                    Predictive Analytics
-                  </Link>
-                  <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/imaging`} className="flex items-center py-1 text-dark/80 hover:text-gold transition-colors duration-200">
-                    <Image size={16} className="mr-2 text-gold-light" />
-                    Medical Imaging
-                  </Link>
-                </div>
-              )}
-            </div>
+            <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/pricing`} className="nav-item uppercase text-sm flex items-center">
+              <CreditCard size={16} className="mr-2 text-gold-light" />
+              {t('navigation.pricing', 'Pricing')}
+            </Link>
             <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/research`} className="nav-item uppercase text-sm">{t('navigation.research')}</Link>
             <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/about`} className="nav-item uppercase text-sm">{t('navigation.about')}</Link>
             <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/contact`} className="nav-item uppercase text-sm">{t('navigation.contact')}</Link>

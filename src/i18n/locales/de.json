@@ -6,7 +6,10 @@
     "blog": "Blog",
     "about": "Über uns",
     "contact": "Kontakt",
-    "appointment": "Termin buchen"
+    "appointment": "Termin buchen",
+    "home": "Startseite",
+    "pricing": "Preise",
+    "research": "Forschung"
   },
   "toast": {
     "redirected": "Auf Basis Ihres Standorts zur deutschen Version weitergeleitet"
