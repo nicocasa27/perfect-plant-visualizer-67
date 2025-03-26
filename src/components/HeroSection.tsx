@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import CirclePlant from './CirclePlant';
 
@@ -40,7 +39,7 @@ const HeroSection = () => {
             </div>
             <h1 className="text-[10vw] md:text-[8vw] lg:text-[6vw] text-center font-medium max-w-7xl text-black">
               <span className="inline-block">Intelligent Medical</span>
-              <span className="inline-block ml-2 px-3 py-1 bg-dark rounded-lg shadow-sm text-[3vw] md:text-[2.5vw] lg:text-[2vw]">
+              <span className="inline-block ml-2 px-3 py-1 bg-dark rounded-lg shadow-sm text-[10vw] md:text-[8vw] lg:text-[6vw]">
                 <span className={`inline-block text-white ${isChanging ? 'animate-fade-out' : 'animate-fade-in'}`}>
                   {roles[currentRoleIndex]}
                 </span>
