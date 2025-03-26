@@ -85,4 +85,8 @@
   .title-large {
     @apply text-[10vw] md:text-[8vw] lg:text-[6vw] leading-[0.9] font-medium tracking-tight;
   }
+  
+  .title-xl {
+    @apply text-[12vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] font-medium tracking-tight;
+  }
 }
