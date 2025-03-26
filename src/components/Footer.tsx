@@ -43,13 +43,8 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
               <li>
-                <Link to={`/${currentLanguage}/services`} className="text-dark/80 hover:text-gold transition-colors duration-200">
-                  {t('navigation.services')}
-                </Link>
-              </li>
-              <li>
-                <Link to={`/${currentLanguage}/about`} className="text-dark/80 hover:text-gold transition-colors duration-200">
-                  {t('navigation.about')}
+                <Link to={`/${currentLanguage}/solutions`} className="text-dark/80 hover:text-gold transition-colors duration-200">
+                  {t('navigation.solutions')}
                 </Link>
               </li>
               <li>
@@ -58,8 +53,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to={`/${currentLanguage}/about`} className="text-dark/80 hover:text-gold transition-colors duration-200">
+                  {t('navigation.about')}
+                </Link>
+              </li>
+              <li>
                 <Link to={`/${currentLanguage}/contact`} className="text-dark/80 hover:text-gold transition-colors duration-200">
                   {t('navigation.contact')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${currentLanguage}/team`} className="text-dark/80 hover:text-gold transition-colors duration-200">
+                  Team
                 </Link>
               </li>
             </ul>

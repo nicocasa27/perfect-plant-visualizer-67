@@ -2,7 +2,7 @@
 {
   "watchVideo": "Watch How Our Platform Works",
   "navigation": {
-    "services": "Services",
+    "solutions": "Solutions",
     "research": "Research",
     "about": "About",
     "contact": "Contact",
@@ -62,7 +62,7 @@
     "disclaimer": "Disclaimer: Sarovi is not a replacement for medical professionals. It may produce inaccurate information. While used in clinical trials, all medical decisions should be made by qualified healthcare providers."
   },
   "navbar": {
-    "services": "Services",
+    "solutions": "Solutions",
     "research": "Research",
     "about": "About",
     "contact": "Contact"

@@ -21,15 +21,23 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/:language" element={<LanguageIndex />} />
-          <Route path="/:language/services" element={<LanguageIndex />} />
+          <Route path="/:language/solutions" element={<LanguageIndex />} />
+          <Route path="/:language/solutions/diagnostic" element={<LanguageIndex />} />
+          <Route path="/:language/solutions/predictive" element={<LanguageIndex />} />
+          <Route path="/:language/solutions/imaging" element={<LanguageIndex />} />
           <Route path="/:language/research" element={<LanguageIndex />} />
           <Route path="/:language/about" element={<LanguageIndex />} />
           <Route path="/:language/contact" element={<LanguageIndex />} />
+          <Route path="/:language/team" element={<LanguageIndex />} />
           <Route path="/:language/appointment" element={<LanguageIndex />} />
-          <Route path="/services" element={<Index />} />
+          <Route path="/solutions" element={<Index />} />
+          <Route path="/solutions/diagnostic" element={<Index />} />
+          <Route path="/solutions/predictive" element={<Index />} />
+          <Route path="/solutions/imaging" element={<Index />} />
           <Route path="/research" element={<Index />} />
           <Route path="/about" element={<Index />} />
           <Route path="/contact" element={<Index />} />
+          <Route path="/team" element={<Index />} />
           <Route path="/appointment" element={<Index />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
