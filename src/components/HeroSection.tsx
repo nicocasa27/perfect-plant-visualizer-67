@@ -35,12 +35,12 @@ const HeroSection = () => {
       <div className="container mx-auto">
         <div className="relative flex flex-col items-center">
           <div className="z-10 text-center">
-            <h1 className="text-[13vw] md:text-[11vw] lg:text-[9vw] text-center font-medium max-w-7xl text-black">
+            <div className="flex justify-center items-center mb-4">
+              <CirclePlant />
+            </div>
+            <h1 className="text-[10vw] md:text-[8vw] lg:text-[6vw] text-center font-medium max-w-7xl text-black">
               <span className="inline-block">Intelligent Medical</span>
-              <div className="flex justify-center items-center my-2">
-                <CirclePlant />
-              </div>
-              <span className="inline-block min-w-32 px-3 py-1 bg-dark rounded-lg shadow-sm text-[5vw] md:text-[4vw] lg:text-[3vw]">
+              <span className="inline-block ml-2 px-3 py-1 bg-dark rounded-lg shadow-sm text-[3vw] md:text-[2.5vw] lg:text-[2vw]">
                 <span className={`inline-block text-white ${isChanging ? 'animate-fade-out' : 'animate-fade-in'}`}>
                   {roles[currentRoleIndex]}
                 </span>
