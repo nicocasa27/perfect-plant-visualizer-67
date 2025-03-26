@@ -65,10 +65,8 @@ NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName
 
 const NavigationMenuContent = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content> & {
-    forceMount?: boolean;
-  }
->(({ className, forceMount, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content>
+>(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
@@ -76,7 +74,6 @@ const NavigationMenuContent = React.forwardRef<
       className
     )}
     {...props}
-    forceMount={forceMount}
   />
 ))
 NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName

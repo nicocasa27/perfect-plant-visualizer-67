@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ChevronDown } from 'lucide-react';
+import { ChevronRight, ChevronDown, Stethoscope, LineChart, Image } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import {
   NavigationMenu,
@@ -42,37 +42,42 @@ const Navbar = () => {
                 >
                   {t('navigation.solutions')}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent 
-                  onMouseLeave={() => setIsSolutionsOpen(false)} 
-                  forceMount={isSolutionsOpen}
-                  className="bg-white w-[400px] p-4 rounded-md shadow-lg z-50"
-                >
-                  <div className="grid gap-3">
-                    <div className="row-span-3">
-                      <div className="font-medium mb-2 text-sm">AI Solutions</div>
-                      <ul className="grid gap-3 p-4">
-                        <li className="group">
-                          <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/diagnostic`} className="block text-dark/80 hover:text-gold transition-colors duration-200">
-                            <div className="font-medium">Diagnostic AI</div>
-                            <p className="text-xs text-dark/70">Advanced diagnostic tools powered by artificial intelligence</p>
-                          </Link>
-                        </li>
-                        <li className="group">
-                          <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/predictive`} className="block text-dark/80 hover:text-gold transition-colors duration-200">
-                            <div className="font-medium">Predictive Analytics</div>
-                            <p className="text-xs text-dark/70">Forecasting health outcomes through pattern recognition</p>
-                          </Link>
-                        </li>
-                        <li className="group">
-                          <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/imaging`} className="block text-dark/80 hover:text-gold transition-colors duration-200">
-                            <div className="font-medium">Medical Imaging</div>
-                            <p className="text-xs text-dark/70">Enhanced medical imaging analysis and interpretation</p>
-                          </Link>
-                        </li>
-                      </ul>
+                {isSolutionsOpen && (
+                  <NavigationMenuContent 
+                    onMouseLeave={() => setIsSolutionsOpen(false)} 
+                    className="bg-white p-4 rounded-md shadow-lg z-50"
+                  >
+                    <div className="grid grid-cols-3 gap-6 w-[600px]">
+                      <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/diagnostic`} className="flex items-start p-3 rounded-md hover:bg-gray-50 transition-colors">
+                        <div className="mr-3 text-gold-light">
+                          <Stethoscope size={24} />
+                        </div>
+                        <div>
+                          <div className="font-medium">Diagnostic AI</div>
+                          <p className="text-xs text-dark/70">Advanced diagnostic tools powered by artificial intelligence</p>
+                        </div>
+                      </Link>
+                      <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/predictive`} className="flex items-start p-3 rounded-md hover:bg-gray-50 transition-colors">
+                        <div className="mr-3 text-gold-light">
+                          <LineChart size={24} />
+                        </div>
+                        <div>
+                          <div className="font-medium">Predictive Analytics</div>
+                          <p className="text-xs text-dark/70">Forecasting health outcomes through pattern recognition</p>
+                        </div>
+                      </Link>
+                      <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/imaging`} className="flex items-start p-3 rounded-md hover:bg-gray-50 transition-colors">
+                        <div className="mr-3 text-gold-light">
+                          <Image size={24} />
+                        </div>
+                        <div>
+                          <div className="font-medium">Medical Imaging</div>
+                          <p className="text-xs text-dark/70">Enhanced medical imaging analysis and interpretation</p>
+                        </div>
+                      </Link>
                     </div>
-                  </div>
-                </NavigationMenuContent>
+                  </NavigationMenuContent>
+                )}
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -111,13 +116,16 @@ const Navbar = () => {
               </button>
               {isSolutionsOpen && (
                 <div className="pl-4 mt-2 space-y-2 bg-white">
-                  <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/diagnostic`} className="block text-dark/80 hover:text-gold transition-colors duration-200">
+                  <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/diagnostic`} className="flex items-center py-1 text-dark/80 hover:text-gold transition-colors duration-200">
+                    <Stethoscope size={16} className="mr-2 text-gold-light" />
                     Diagnostic AI
                   </Link>
-                  <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/predictive`} className="block text-dark/80 hover:text-gold transition-colors duration-200">
+                  <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/predictive`} className="flex items-center py-1 text-dark/80 hover:text-gold transition-colors duration-200">
+                    <LineChart size={16} className="mr-2 text-gold-light" />
                     Predictive Analytics
                   </Link>
-                  <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/imaging`} className="block text-dark/80 hover:text-gold transition-colors duration-200">
+                  <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/imaging`} className="flex items-center py-1 text-dark/80 hover:text-gold transition-colors duration-200">
+                    <Image size={16} className="mr-2 text-gold-light" />
                     Medical Imaging
                   </Link>
                 </div>
