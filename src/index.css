@@ -9,6 +9,7 @@
   :root {
     --background: 43 41% 56%;
     --foreground: 20 15% 15%;
+    --cream-bg: 37 58% 87%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -49,7 +50,7 @@
   }
   
   body {
-    @apply bg-white text-black font-sans;
+    @apply bg-cream text-black font-sans;
   }
 }
 
