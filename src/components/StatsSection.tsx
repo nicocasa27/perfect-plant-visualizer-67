@@ -12,64 +12,64 @@ const StatsSection = () => {
             Proven Results in Medical Settings
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
             {/* Accuracy Stat */}
             <motion.div 
-              className="bg-white p-6 rounded-lg shadow-md text-center"
+              className="text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="flex justify-center mb-4">
-                <Shield size={40} className="text-gold" />
+              <div className="flex justify-center mb-2">
+                <Shield size={32} className="text-gold" />
               </div>
-              <h3 className="text-4xl font-bold text-dark mb-2">91%</h3>
+              <h3 className="text-5xl font-bold text-dark mb-2">91%</h3>
               <p className="text-gray-600">Accuracy in diagnostics</p>
             </motion.div>
             
             {/* Time Saved Stat */}
             <motion.div 
-              className="bg-white p-6 rounded-lg shadow-md text-center"
+              className="text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="flex justify-center mb-4">
-                <Clock size={40} className="text-gold" />
+              <div className="flex justify-center mb-2">
+                <Clock size={32} className="text-gold" />
               </div>
-              <h3 className="text-4xl font-bold text-dark mb-2">80%</h3>
+              <h3 className="text-5xl font-bold text-dark mb-2">80%</h3>
               <p className="text-gray-600">Of doctors' time saved</p>
             </motion.div>
             
             {/* Revenue Increase Stat */}
             <motion.div 
-              className="bg-white p-6 rounded-lg shadow-md text-center"
+              className="text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="flex justify-center mb-4">
-                <TrendingUp size={40} className="text-gold" />
+              <div className="flex justify-center mb-2">
+                <TrendingUp size={32} className="text-gold" />
               </div>
-              <h3 className="text-4xl font-bold text-dark mb-2">35%</h3>
+              <h3 className="text-5xl font-bold text-dark mb-2">35%</h3>
               <p className="text-gray-600">Increased revenue for practices</p>
             </motion.div>
             
             {/* Clinical Trials Stat */}
             <motion.div 
-              className="bg-white p-6 rounded-lg shadow-md text-center"
+              className="text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="flex justify-center mb-4">
-                <Users size={40} className="text-gold" />
+              <div className="flex justify-center mb-2">
+                <Users size={32} className="text-gold" />
               </div>
-              <h3 className="text-4xl font-bold text-dark mb-2">10+</h3>
+              <h3 className="text-5xl font-bold text-dark mb-2">10+</h3>
               <p className="text-gray-600">Ongoing clinical trials</p>
             </motion.div>
           </div>
@@ -89,7 +89,7 @@ const StatsSection = () => {
             </div>
             <div className="flex flex-col items-center">
               <img 
-                src="/lovable-uploads/2d3dfd2b-ba80-4b3a-8e39-011dbb857539.png" 
+                src="/lovable-uploads/7435c095-2477-4261-b13f-20e6ad868d35.png" 
                 alt="HIPAA Compliance" 
                 className="h-32 mb-2"
               />
