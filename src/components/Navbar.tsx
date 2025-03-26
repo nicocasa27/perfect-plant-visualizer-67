@@ -15,8 +15,8 @@ const Navbar = () => {
             </svg>
           </div>
           <div className="flex flex-col leading-none">
-            <span className="font-medium text-sm">PRAXIS</span>
-            <span className="font-medium text-sm">LEANDRA ISLER</span>
+            <span className="font-medium text-sm">SAROVI</span>
+            <span className="font-medium text-sm">MEDICAL AI</span>
           </div>
         </div>
         
