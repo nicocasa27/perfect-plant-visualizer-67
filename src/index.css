@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -50,7 +49,7 @@
   }
   
   body {
-    @apply bg-cream text-black font-sans;
+    @apply bg-gradient-to-br from-cream-light via-cream to-cream-dark text-black font-sans min-h-screen;
   }
 }
 

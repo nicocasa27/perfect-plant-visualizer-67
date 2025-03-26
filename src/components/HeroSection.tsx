@@ -31,7 +31,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-20 overflow-hidden min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-cream-light via-cream to-cream-dark">
+    <section className="relative py-16 md:py-20 overflow-hidden min-h-[70vh] flex items-center justify-center">
       <div className="container mx-auto">
         <div className="relative flex flex-col items-center">
           <div className="z-10 text-center">
