@@ -2,8 +2,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+
   return (
     <header className="w-full py-5">
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
@@ -17,20 +21,20 @@ const Navbar = () => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="nav-item uppercase text-sm">Home</Link>
+          <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}`} className="nav-item uppercase text-sm">{t('navigation.home', 'Home')}</Link>
           <div className="relative group">
-            <Link to="/services" className="nav-item uppercase text-sm flex items-center">
-              Services
+            <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/services`} className="nav-item uppercase text-sm flex items-center">
+              {t('navigation.services')}
               <span className="ml-1">+</span>
             </Link>
           </div>
-          <Link to="/blog" className="nav-item uppercase text-sm">Blog</Link>
-          <Link to="/about" className="nav-item uppercase text-sm">About</Link>
-          <Link to="/contact" className="nav-item uppercase text-sm">Contact</Link>
+          <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/blog`} className="nav-item uppercase text-sm">{t('navigation.blog')}</Link>
+          <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/about`} className="nav-item uppercase text-sm">{t('navigation.about')}</Link>
+          <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/contact`} className="nav-item uppercase text-sm">{t('navigation.contact')}</Link>
         </nav>
         
         <a href="https://test.sarovi.pl" className="hidden md:flex items-center text-sm font-medium uppercase bg-dark text-white px-4 py-2 rounded-lg shadow-sm hover:bg-dark/90 transition-colors">
-          Get Started
+          {t('navigation.appointment', 'Get Started')}
           <ChevronRight className="ml-1 h-4 w-4" />
         </a>
         

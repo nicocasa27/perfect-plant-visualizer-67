@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, ExternalLink } from 'lucide-react';
+import { ChevronRight, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -52,9 +52,15 @@ const CallToAction = () => {
             </Link>
             
             <a href="https://test.sarovi.pl" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="bg-white/80 backdrop-blur-sm text-dark hover:bg-white rounded-lg px-6 py-2 h-auto text-sm font-medium uppercase border-2 border-dark/20">
+              <Button variant="outline" className="group bg-white/80 backdrop-blur-sm text-dark hover:bg-white rounded-lg px-6 py-2 h-auto text-sm font-medium uppercase border-2 border-dark/20">
                 {t('cta.startNow')}
-                <ExternalLink className="ml-1 h-4 w-4" />
+                <motion.span
+                  className="ml-1 inline-flex"
+                  whileHover={{ x: 3 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </motion.span>
               </Button>
             </a>
           </motion.div>

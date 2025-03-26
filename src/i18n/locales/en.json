@@ -49,5 +49,21 @@
     "subheading": "Book a demonstration to see how our intelligent medical platform can transform your practice",
     "button": "Book a Demo",
     "startNow": "Start Now"
+  },
+  "footer": {
+    "description": "Advanced AI-powered medical platform revolutionizing healthcare delivery with intelligent diagnostics and personalized treatment recommendations.",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "contact": "Contact Us",
+    "rights": "All Rights Reserved"
+  },
+  "navbar": {
+    "services": "Services",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
   }
 }

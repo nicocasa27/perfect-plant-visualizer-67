@@ -40,22 +40,22 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link to={`/${currentLanguage}/services`} className="text-white/80 hover:text-gold transition-colors duration-200">
-                  {t('navbar.services')}
+                  {t('navigation.services')}
                 </Link>
               </li>
               <li>
                 <Link to={`/${currentLanguage}/about`} className="text-white/80 hover:text-gold transition-colors duration-200">
-                  {t('navbar.about')}
+                  {t('navigation.about')}
                 </Link>
               </li>
               <li>
                 <Link to={`/${currentLanguage}/blog`} className="text-white/80 hover:text-gold transition-colors duration-200">
-                  {t('navbar.blog')}
+                  {t('navigation.blog')}
                 </Link>
               </li>
               <li>
                 <Link to={`/${currentLanguage}/contact`} className="text-white/80 hover:text-gold transition-colors duration-200">
-                  {t('navbar.contact')}
+                  {t('navigation.contact')}
                 </Link>
               </li>
             </ul>
