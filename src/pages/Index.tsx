@@ -6,6 +6,7 @@ import PartnersSection from '../components/PartnersSection';
 import FeaturesSection from '../components/FeaturesSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CallToAction from '../components/CallToAction';
+import Footer from '../components/Footer';
 import FloatingElements from '../components/FloatingElements';
 import { VideoPlayerDemo } from '../components/VideoPlayerDemo';
 import { useTranslation } from 'react-i18next';
@@ -37,6 +38,7 @@ const Index = () => {
         <TestimonialsSection />
         <CallToAction />
       </main>
+      <Footer />
     </div>
   );
 };

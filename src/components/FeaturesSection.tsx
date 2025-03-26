@@ -20,10 +20,10 @@ const FeatureCard = ({ title, description, delay, imagePath, gradient }: Feature
           className="absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-500 group-hover:scale-110 group-hover:opacity-80" 
           style={{ backgroundImage: `url('${imagePath}')` }} 
         />
-        <div className={`absolute inset-0 ${gradient} opacity-75 group-hover:opacity-80 transition-all duration-300`}></div>
-        <CardContent className="p-6 relative z-10 h-full flex flex-col justify-end min-h-[320px] backdrop-blur-sm">
-          <h3 className="text-2xl font-bold mb-3 text-white">{title}</h3>
-          <p className="text-white/95 text-lg font-medium">{description}</p>
+        <div className={`absolute inset-0 ${gradient} opacity-85 group-hover:opacity-90 transition-all duration-300`}></div>
+        <CardContent className="p-6 relative z-10 h-full flex flex-col justify-start min-h-[320px]">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white mt-3">{title}</h3>
+          <p className="text-white/95 text-lg md:text-xl font-medium">{description}</p>
         </CardContent>
       </Card>
     </div>
@@ -39,28 +39,28 @@ const FeaturesSection = () => {
       description: t('features.multimodal.description'),
       delay: 0.1,
       imagePath: '/lovable-uploads/83a4ecfb-e2b1-480e-bc05-89409efe8c3d.png',
-      gradient: 'bg-gradient-to-br from-purple-500/70 to-pink-500/70'
+      gradient: 'bg-gradient-to-br from-purple-600/90 to-pink-500/90'
     },
     {
       title: t('features.actions.title'),
       description: t('features.actions.description'),
       delay: 0.2,
       imagePath: '/lovable-uploads/1a6e08ea-1033-4872-b475-8175f369001c.png',
-      gradient: 'bg-gradient-to-br from-blue-500/70 to-teal-400/70'
+      gradient: 'bg-gradient-to-br from-blue-600/90 to-teal-400/90'
     },
     {
       title: t('features.imaging.title'),
       description: t('features.imaging.description'),
       delay: 0.3,
       imagePath: '/lovable-uploads/16ed7418-b324-42b3-95b1-03196c4c156e.png',
-      gradient: 'bg-gradient-to-br from-amber-500/70 to-orange-600/70'
+      gradient: 'bg-gradient-to-br from-amber-600/90 to-orange-600/90'
     },
     {
       title: t('features.records.title'),
       description: t('features.records.description'),
       delay: 0.4,
       imagePath: '/lovable-uploads/83a4ecfb-e2b1-480e-bc05-89409efe8c3d.png',
-      gradient: 'bg-gradient-to-br from-green-500/70 to-emerald-400/70'
+      gradient: 'bg-gradient-to-br from-green-600/90 to-emerald-400/90'
     }
   ];
 

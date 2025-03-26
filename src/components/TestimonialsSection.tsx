@@ -14,27 +14,22 @@ interface TestimonialProps {
 
 const Testimonial = ({ quote, author, title, delay }: TestimonialProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, delay }}
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      <Card className="h-full border-0 shadow-lg bg-white/80 backdrop-blur-sm">
-        <CardContent className="p-6">
+    <div className="h-full min-w-[300px] md:min-w-[350px] flex-1 px-3">
+      <Card className="h-full border-0 shadow-lg bg-white/90 backdrop-blur-sm">
+        <CardContent className="p-6 md:p-8">
           <div className="flex mb-4">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="h-5 w-5 text-gold fill-gold" />
             ))}
           </div>
-          <p className="mb-6 italic text-dark/90">"{quote}"</p>
-          <div>
-            <p className="font-medium">{author}</p>
+          <p className="mb-6 italic text-dark/90 text-lg">{quote}</p>
+          <div className="border-t pt-4 border-dark/10">
+            <p className="font-medium text-lg">{author}</p>
             <p className="text-sm text-dark/70">{title}</p>
           </div>
         </CardContent>
       </Card>
-    </motion.div>
+    </div>
   );
 };
 
@@ -74,7 +69,7 @@ const TestimonialsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-medium mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             {t('testimonials.heading')}
           </h2>
           <p className="text-lg text-dark/80 max-w-2xl mx-auto">
@@ -82,16 +77,54 @@ const TestimonialsSection = () => {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Testimonial
-              key={index}
-              quote={testimonial.quote}
-              author={testimonial.author}
-              title={testimonial.title}
-              delay={testimonial.delay}
-            />
-          ))}
+        <div className="relative">
+          <div className="flex overflow-hidden">
+            <motion.div
+              className="flex min-w-full py-4"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 50,
+                  ease: "linear",
+                },
+              }}
+            >
+              {/* First set of testimonials */}
+              {testimonials.map((testimonial, index) => (
+                <Testimonial
+                  key={`testimonial-1-${index}`}
+                  quote={testimonial.quote}
+                  author={testimonial.author}
+                  title={testimonial.title}
+                  delay={testimonial.delay}
+                />
+              ))}
+              
+              {/* Duplicate set for seamless loop */}
+              {testimonials.map((testimonial, index) => (
+                <Testimonial
+                  key={`testimonial-2-${index}`}
+                  quote={testimonial.quote}
+                  author={testimonial.author}
+                  title={testimonial.title}
+                  delay={testimonial.delay}
+                />
+              ))}
+              
+              {/* Triple set to ensure enough content for larger screens */}
+              {testimonials.map((testimonial, index) => (
+                <Testimonial
+                  key={`testimonial-3-${index}`}
+                  quote={testimonial.quote}
+                  author={testimonial.author}
+                  title={testimonial.title}
+                  delay={testimonial.delay}
+                />
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

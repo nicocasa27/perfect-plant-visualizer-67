@@ -6,6 +6,7 @@ import PartnersSection from '../components/PartnersSection';
 import FeaturesSection from '../components/FeaturesSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CallToAction from '../components/CallToAction';
+import Footer from '../components/Footer';
 import FloatingElements from '../components/FloatingElements';
 import { VideoPlayerDemo } from '../components/VideoPlayerDemo';
 import { useParams } from 'react-router-dom';
@@ -39,6 +40,7 @@ const LanguageIndex = () => {
         <TestimonialsSection />
         <CallToAction />
       </main>
+      <Footer />
     </div>
   );
 };
