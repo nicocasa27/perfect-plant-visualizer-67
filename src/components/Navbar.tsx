@@ -7,7 +7,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -17,6 +16,7 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const [isOpen, setIsOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
 
   return (
     <header className="w-full py-5">
@@ -33,13 +33,20 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}`} className="nav-item uppercase text-sm">{t('navigation.home', 'Home')}</Link>
           
-          <NavigationMenu className="z-10">
+          <NavigationMenu className="z-50">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="nav-item uppercase text-sm bg-transparent hover:bg-transparent focus:bg-transparent">
+                <NavigationMenuTrigger 
+                  onMouseEnter={() => setIsSolutionsOpen(true)}
+                  className="nav-item uppercase text-sm bg-transparent hover:bg-transparent focus:bg-transparent"
+                >
                   {t('navigation.solutions')}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-white w-[400px] p-4 rounded-md shadow-lg">
+                <NavigationMenuContent 
+                  onMouseLeave={() => setIsSolutionsOpen(false)} 
+                  forceMount={isSolutionsOpen}
+                  className="bg-white w-[400px] p-4 rounded-md shadow-lg z-50"
+                >
                   <div className="grid gap-3">
                     <div className="row-span-3">
                       <div className="font-medium mb-2 text-sm">AI Solutions</div>
@@ -91,25 +98,30 @@ const Navbar = () => {
       </div>
       
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg rounded-b-lg mt-1 p-4 absolute left-0 right-0 z-20">
+        <div className="md:hidden bg-white shadow-lg rounded-b-lg mt-1 p-4 absolute left-0 right-0 z-50">
           <nav className="flex flex-col space-y-3">
             <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}`} className="nav-item uppercase text-sm">{t('navigation.home', 'Home')}</Link>
             <div className="nav-item uppercase text-sm flex flex-col">
-              <button className="flex justify-between items-center" onClick={() => {}}>
+              <button 
+                className="flex justify-between items-center" 
+                onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+              >
                 {t('navigation.solutions')}
                 <ChevronDown className="h-4 w-4" />
               </button>
-              <div className="pl-4 mt-2 space-y-2">
-                <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/diagnostic`} className="block text-dark/80 hover:text-gold transition-colors duration-200">
-                  Diagnostic AI
-                </Link>
-                <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/predictive`} className="block text-dark/80 hover:text-gold transition-colors duration-200">
-                  Predictive Analytics
-                </Link>
-                <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/imaging`} className="block text-dark/80 hover:text-gold transition-colors duration-200">
-                  Medical Imaging
-                </Link>
-              </div>
+              {isSolutionsOpen && (
+                <div className="pl-4 mt-2 space-y-2 bg-white">
+                  <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/diagnostic`} className="block text-dark/80 hover:text-gold transition-colors duration-200">
+                    Diagnostic AI
+                  </Link>
+                  <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/predictive`} className="block text-dark/80 hover:text-gold transition-colors duration-200">
+                    Predictive Analytics
+                  </Link>
+                  <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/solutions/imaging`} className="block text-dark/80 hover:text-gold transition-colors duration-200">
+                    Medical Imaging
+                  </Link>
+                </div>
+              )}
             </div>
             <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/research`} className="nav-item uppercase text-sm">{t('navigation.research')}</Link>
             <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/about`} className="nav-item uppercase text-sm">{t('navigation.about')}</Link>
