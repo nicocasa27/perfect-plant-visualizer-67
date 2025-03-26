@@ -29,7 +29,7 @@ const Navbar = () => {
           <Link to="/contact" className="nav-item uppercase text-sm">Contact</Link>
         </nav>
         
-        <a href="https://test.sarovi.pl" className="hidden md:flex items-center text-sm font-medium uppercase">
+        <a href="https://test.sarovi.pl" className="hidden md:flex items-center text-sm font-medium uppercase bg-dark text-white px-4 py-2 rounded-lg shadow-sm hover:bg-dark/90 transition-colors">
           Get Started
           <ChevronRight className="ml-1 h-4 w-4" />
         </a>
