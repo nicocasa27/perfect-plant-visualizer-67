@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -108,6 +107,47 @@
   
   .title-xl {
     @apply text-[12vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] font-medium tracking-tight;
+  }
+
+  .floating-animation {
+    animation: floating 6s ease-in-out infinite;
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  .particle-animation {
+    animation: particles 8s ease-in-out infinite;
+  }
+  
+  @keyframes particles {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.05;
+    }
+    25% {
+      opacity: 0.1;
+    }
+    50% {
+      transform: translate(30px, -30px) scale(1.2);
+      opacity: 0.05;
+    }
+    75% {
+      opacity: 0.1;
+    }
+    100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.05;
+    }
   }
 
   @keyframes fadeInUp {
