@@ -36,8 +36,8 @@ const HeroSection = () => {
                 </span>
               </span>
             </h1>
-            <p className="text-lg md:text-xl max-w-2xl text-center mt-6 mx-auto text-black">
-              Advanced AI for healthcare professionals that analyzes medical data, creates documentation, and assists in clinical decision-making.
+            <p className="text-lg md:text-xl max-w-3xl text-center mt-6 mx-auto text-black">
+              Empowering healthcare professionals to achieve more with less effort, every day.
             </p>
           </div>
         </div>
