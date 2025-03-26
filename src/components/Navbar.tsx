@@ -28,7 +28,7 @@ const Navbar = () => {
               <span className="ml-1">+</span>
             </Link>
           </div>
-          <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/blog`} className="nav-item uppercase text-sm">{t('navigation.blog')}</Link>
+          <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/research`} className="nav-item uppercase text-sm">{t('navigation.research')}</Link>
           <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/about`} className="nav-item uppercase text-sm">{t('navigation.about')}</Link>
           <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/contact`} className="nav-item uppercase text-sm">{t('navigation.contact')}</Link>
         </nav>

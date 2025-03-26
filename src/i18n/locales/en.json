@@ -3,7 +3,7 @@
   "watchVideo": "Watch How Our Platform Works",
   "navigation": {
     "services": "Services",
-    "blog": "Blog",
+    "research": "Research",
     "about": "About",
     "contact": "Contact",
     "appointment": "Book Appointment"
@@ -51,18 +51,19 @@
     "startNow": "Start Now"
   },
   "footer": {
-    "description": "Advanced AI-powered medical platform revolutionizing healthcare delivery with intelligent diagnostics and personalized treatment recommendations.",
+    "description": "AI-powered medical platform enhancing healthcare with intelligent diagnostics and recommendations.",
     "quickLinks": "Quick Links",
     "legal": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookies": "Cookie Policy",
     "contact": "Contact Us",
-    "rights": "All Rights Reserved"
+    "rights": "All Rights Reserved",
+    "disclaimer": "Disclaimer: Sarovi is not a replacement for medical professionals. It may produce inaccurate information. While used in clinical trials, all medical decisions should be made by qualified healthcare providers."
   },
   "navbar": {
     "services": "Services",
-    "blog": "Blog",
+    "research": "Research",
     "about": "About",
     "contact": "Contact"
   }

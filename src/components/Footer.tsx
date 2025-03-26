@@ -49,8 +49,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to={`/${currentLanguage}/blog`} className="text-white/80 hover:text-gold transition-colors duration-200">
-                  {t('navigation.blog')}
+                <Link to={`/${currentLanguage}/research`} className="text-white/80 hover:text-gold transition-colors duration-200">
+                  {t('navigation.research')}
                 </Link>
               </li>
               <li>
@@ -101,7 +101,11 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/60">
+        <div className="mt-8 pt-4 border-t border-white/10 text-sm text-white/70">
+          <p className="mb-4">{t('footer.disclaimer')}</p>
+        </div>
+        
+        <div className="border-t border-white/10 mt-4 pt-4 text-center text-white/60">
           <p>© {year} Sarovi. {t('footer.rights')}</p>
         </div>
       </div>
