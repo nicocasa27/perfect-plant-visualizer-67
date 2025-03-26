@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
@@ -28,10 +29,10 @@ const Navbar = () => {
           <Link to="/contact" className="nav-item uppercase text-sm">Contact</Link>
         </nav>
         
-        <Link to="/appointment" className="hidden md:flex items-center text-sm font-medium uppercase">
-          Book Appointment
+        <a href="https://test.sarovi.pl" className="hidden md:flex items-center text-sm font-medium uppercase">
+          Get Started
           <ChevronRight className="ml-1 h-4 w-4" />
-        </Link>
+        </a>
         
         <button className="md:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
