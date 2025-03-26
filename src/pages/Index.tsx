@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
+import MultimodalSection from '../components/MultimodalSection';
 
 const Index = () => {
   return (
@@ -9,6 +10,7 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
+        <MultimodalSection />
       </main>
     </div>
   );
