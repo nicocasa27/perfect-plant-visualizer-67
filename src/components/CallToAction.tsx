@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -42,6 +42,7 @@ const CallToAction = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link to={`/${currentLanguage}/appointment`}>
               <Button size="lg" className="bg-dark text-white hover:bg-dark/80 rounded-full px-8 py-6 h-auto text-lg">
@@ -49,6 +50,13 @@ const CallToAction = () => {
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
+            
+            <a href="https://test.sarovi.pl" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline" className="bg-white/80 backdrop-blur-sm text-dark hover:bg-white rounded-full px-8 py-6 h-auto text-lg border-2 border-dark/20">
+                {t('cta.startNow')}
+                <ExternalLink className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>

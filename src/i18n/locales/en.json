@@ -47,6 +47,7 @@
   "cta": {
     "heading": "Experience the Future of Healthcare",
     "subheading": "Book a demonstration to see how our intelligent medical platform can transform your practice",
-    "button": "Book a Demo"
+    "button": "Book a Demo",
+    "startNow": "Start Now"
   }
 }
