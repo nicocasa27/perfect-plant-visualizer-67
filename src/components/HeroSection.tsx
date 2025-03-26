@@ -40,7 +40,7 @@ const HeroSection = () => {
               <div className="flex justify-center items-center mb-2">
                 <CirclePlant />
               </div>
-              <span className="inline-block min-w-40 px-4 py-2 bg-gray-100 rounded-lg shadow-sm">
+              <span className="inline-block min-w-40 px-4 py-2 bg-dark rounded-lg shadow-sm">
                 <span className={`inline-block text-white ${isChanging ? 'animate-fade-out' : 'animate-fade-in'}`}>
                   {roles[currentRoleIndex]}
                 </span>
