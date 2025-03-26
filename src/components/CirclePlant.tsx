@@ -16,18 +16,19 @@ const CirclePlant = () => {
   const opacity = useTransform(scrollYProgress, [0.1, 0.2], [1, 0]);
   
   return (
-    <motion.div 
-      ref={containerRef} 
-      style={{ y: yPosition, scale, opacity }}
-      className="relative inline-block w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72"
-    >
-      <DotLottieReact
-        src="https://lottie.host/1d043f26-5e60-4bd1-a102-1324561e935b/ZzJoFV5Nsz.lottie"
-        loop
-        autoplay
-        className="w-full h-full"
-      />
-    </motion.div>
+    <div ref={containerRef} className="relative">
+      <motion.div 
+        style={{ y: yPosition, scale, opacity }}
+        className="w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72"
+      >
+        <DotLottieReact
+          src="https://lottie.host/1d043f26-5e60-4bd1-a102-1324561e935b/ZzJoFV5Nsz.lottie"
+          loop
+          autoplay
+          className="w-full h-full"
+        />
+      </motion.div>
+    </div>
   );
 };
 
