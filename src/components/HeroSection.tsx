@@ -31,8 +31,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-20 overflow-hidden min-h-[70vh] flex items-center justify-center bg-[#f2e5cc] before:content-[''] before:absolute before:inset-0 before:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZjJlNWNjIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiNlOGQ3YjciIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=')] before:opacity-30">
-      <div className="absolute inset-0 bg-gradient-to-br from-cream-light/80 to-cream-dark/10 opacity-70"></div>
+    <section className="relative py-16 md:py-20 overflow-hidden min-h-[70vh] flex items-center justify-center bg-[#f2e5cc]">
       <div className="container mx-auto">
         <div className="relative flex flex-col items-center">
           <div className="z-10 text-center">
