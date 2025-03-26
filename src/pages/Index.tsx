@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import PartnersSection from '../components/PartnersSection';
-import FeaturesSection from '../components/FeaturesSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer';
@@ -27,14 +26,13 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
-        <PartnersSection />
         <div className="container mx-auto my-16 px-4">
           <h2 className="text-3xl md:text-4xl font-medium text-center mb-8">
             {t('watchVideo')}
           </h2>
           <VideoPlayerDemo />
         </div>
-        <FeaturesSection />
+        <PartnersSection />
         <TestimonialsSection />
         <CallToAction />
       </main>
