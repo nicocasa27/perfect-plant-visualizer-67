@@ -15,7 +15,7 @@ const ModalityCircle = ({
 }) => {
   return (
     <div className={`flex flex-col items-center gap-2 ${className}`}>
-      <div ref={useRef<HTMLDivElement>(null)} className="h-12 w-12 rounded-full bg-cream-light flex items-center justify-center shadow-md">
+      <div className="h-12 w-12 rounded-full bg-cream-light flex items-center justify-center shadow-md">
         <Icon className="h-6 w-6 text-dark" />
       </div>
       <span className="text-xs font-medium">{label}</span>
@@ -92,7 +92,7 @@ const MultimodalSection = () => {
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
           >
             <div className="w-28 h-28 rounded-full bg-black flex items-center justify-center breathing-animation shadow-lg">
-              <span className="text-white text-base font-semibold">AI</span>
+              {/* Removed the AI text here */}
             </div>
           </motion.div>
           
