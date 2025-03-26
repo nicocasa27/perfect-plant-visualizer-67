@@ -10,5 +10,43 @@
   },
   "toast": {
     "redirected": "Omdirigerad till den svenska versionen baserat på din plats"
+  },
+  "features": {
+    "heading": "Intelligent medicinsk plattforms funktioner",
+    "subheading": "Vår avancerade AI-drivna plattform erbjuder ett brett utbud av funktioner för att förbättra vårdleveransen",
+    "ai": {
+      "title": "AI-driven analys",
+      "description": "Kraftfulla diagnostiska algoritmer som analyserar patientdata i realtid för noggranna insikter"
+    },
+    "diagnosis": {
+      "title": "Snabb diagnos",
+      "description": "Få preliminära diagnoser på minuter med hög noggrannhet och tillförlitlighet"
+    },
+    "records": {
+      "title": "Medicinska journaler",
+      "description": "Säker lagring och intelligent analys av medicinsk historia för omfattande vård"
+    },
+    "telehealth": {
+      "title": "Virtuella konsultationer",
+      "description": "Anslut med läkare på distans med AI-förbättrade konsultationsmöjligheter"
+    }
+  },
+  "testimonials": {
+    "heading": "Vad medicinska experter säger",
+    "subheading": "Se hur vår plattform hjälper vårdgivare att leverera bättre vård",
+    "quote1": "Denna plattform har revolutionerat hur jag diagnostiserar komplexa fall. AI-assistenten ger insikter jag kanske hade missat.",
+    "author1": "Dr. Sara Johansson",
+    "title1": "Neurolog, Karolinska Sjukhuset",
+    "quote2": "Integrationen med våra befintliga system var sömlös. Mitt team sparar timmar varje dag på administrativa uppgifter.",
+    "author2": "Dr. Mikael Chen",
+    "title2": "Medicinsk chef, Norra Regionsjukhuset",
+    "quote3": "Att ha AI-analys av medicinska bilder tillsammans med traditionell diagnos har förbättrat vår noggrannhet med över 30%.",
+    "author3": "Dr. Emma Rodriguez",
+    "title3": "Radiolog, Västra Hälsosystemet"
+  },
+  "cta": {
+    "heading": "Upplev framtidens sjukvård",
+    "subheading": "Boka en demonstration för att se hur vår intelligenta medicinska plattform kan omvandla din praktik",
+    "button": "Boka en demo"
   }
 }

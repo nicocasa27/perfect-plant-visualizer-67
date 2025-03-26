@@ -10,5 +10,43 @@
   },
   "toast": {
     "redirected": "Redirected to English version based on your location"
+  },
+  "features": {
+    "heading": "Intelligent Medical Platform Features",
+    "subheading": "Our advanced AI-driven platform offers a wide range of capabilities to enhance healthcare delivery",
+    "ai": {
+      "title": "AI-Powered Analysis",
+      "description": "Powerful diagnostic algorithms that analyze patient data in real-time for accurate insights"
+    },
+    "diagnosis": {
+      "title": "Fast Diagnosis",
+      "description": "Receive preliminary diagnoses in minutes with high accuracy and reliability"
+    },
+    "records": {
+      "title": "Medical Records",
+      "description": "Secure storage and intelligent analysis of medical history for comprehensive care"
+    },
+    "telehealth": {
+      "title": "Virtual Consultations",
+      "description": "Connect with physicians remotely with AI-enhanced consultation capabilities"
+    }
+  },
+  "testimonials": {
+    "heading": "What Medical Professionals Say",
+    "subheading": "See how our platform helps healthcare providers deliver better care",
+    "quote1": "This platform has revolutionized how I diagnose complex cases. The AI assistant provides insights I might have overlooked.",
+    "author1": "Dr. Sarah Johnson",
+    "title1": "Neurologist, Brighton Medical Center",
+    "quote2": "The integration with our existing systems was seamless. My team saves hours each day on administrative tasks.",
+    "author2": "Dr. Michael Chen",
+    "title2": "Chief of Medicine, North Regional Hospital",
+    "quote3": "Having AI analysis of medical images alongside traditional diagnosis has improved our accuracy by over 30%.",
+    "author3": "Dr. Emma Rodriguez",
+    "title3": "Radiologist, Western Health System"
+  },
+  "cta": {
+    "heading": "Experience the Future of Healthcare",
+    "subheading": "Book a demonstration to see how our intelligent medical platform can transform your practice",
+    "button": "Book a Demo"
   }
 }

@@ -10,5 +10,43 @@
   },
   "toast": {
     "redirected": "Przekierowano do polskiej wersji na podstawie Twojej lokalizacji"
+  },
+  "features": {
+    "heading": "Funkcje inteligentnej platformy medycznej",
+    "subheading": "Nasza zaawansowana platforma oparta na AI oferuje szeroki zakres możliwości usprawniających świadczenie opieki zdrowotnej",
+    "ai": {
+      "title": "Analiza oparta na AI",
+      "description": "Potężne algorytmy diagnostyczne analizujące dane pacjentów w czasie rzeczywistym dla dokładnych spostrzeżeń"
+    },
+    "diagnosis": {
+      "title": "Szybka diagnoza",
+      "description": "Otrzymuj wstępne diagnozy w ciągu kilku minut z wysoką dokładnością i niezawodnością"
+    },
+    "records": {
+      "title": "Dokumentacja medyczna",
+      "description": "Bezpieczne przechowywanie i inteligentna analiza historii medycznej dla kompleksowej opieki"
+    },
+    "telehealth": {
+      "title": "Wirtualne konsultacje",
+      "description": "Łącz się z lekarzami zdalnie z funkcjami konsultacji wspomaganymi przez AI"
+    }
+  },
+  "testimonials": {
+    "heading": "Co mówią specjaliści medyczni",
+    "subheading": "Zobacz, jak nasza platforma pomaga dostawcom opieki zdrowotnej zapewniać lepszą opiekę",
+    "quote1": "Ta platforma zrewolucjonizowała sposób, w jaki diagnozuję złożone przypadki. Asystent AI dostarcza spostrzeżeń, które mogłem przeoczyć.",
+    "author1": "Dr Sara Kowalska",
+    "title1": "Neurolog, Centrum Medyczne Warszawa",
+    "quote2": "Integracja z naszymi istniejącymi systemami była bezproblemowa. Mój zespół oszczędza codziennie godziny na zadaniach administracyjnych.",
+    "author2": "Dr Michał Chen",
+    "title2": "Szef medycyny, Szpital Regionalny Północ",
+    "quote3": "Posiadanie analizy AI obrazów medycznych wraz z tradycyjną diagnozą poprawiło naszą dokładność o ponad 30%.",
+    "author3": "Dr Emma Rodriguez",
+    "title3": "Radiolog, Zachodni System Zdrowia"
+  },
+  "cta": {
+    "heading": "Doświadcz przyszłości opieki zdrowotnej",
+    "subheading": "Zarezerwuj demonstrację, aby zobaczyć, jak nasza inteligentna platforma medyczna może przekształcić Twoją praktykę",
+    "button": "Zarezerwuj demo"
   }
 }

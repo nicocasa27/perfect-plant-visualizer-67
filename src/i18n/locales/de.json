@@ -10,5 +10,43 @@
   },
   "toast": {
     "redirected": "Auf Basis Ihres Standorts zur deutschen Version weitergeleitet"
+  },
+  "features": {
+    "heading": "Funktionen der intelligenten medizinischen Plattform",
+    "subheading": "Unsere fortschrittliche KI-gestützte Plattform bietet eine breite Palette von Fähigkeiten zur Verbesserung der Gesundheitsversorgung",
+    "ai": {
+      "title": "KI-gestützte Analyse",
+      "description": "Leistungsstarke Diagnosealgorithmen, die Patientendaten in Echtzeit für genaue Erkenntnisse analysieren"
+    },
+    "diagnosis": {
+      "title": "Schnelle Diagnose",
+      "description": "Erhalten Sie vorläufige Diagnosen in Minuten mit hoher Genauigkeit und Zuverlässigkeit"
+    },
+    "records": {
+      "title": "Medizinische Aufzeichnungen",
+      "description": "Sichere Speicherung und intelligente Analyse der Krankengeschichte für umfassende Versorgung"
+    },
+    "telehealth": {
+      "title": "Virtuelle Konsultationen",
+      "description": "Verbinden Sie sich mit Ärzten aus der Ferne mit KI-verbesserten Beratungsfunktionen"
+    }
+  },
+  "testimonials": {
+    "heading": "Was medizinische Fachleute sagen",
+    "subheading": "Sehen Sie, wie unsere Plattform Gesundheitsdienstleistern hilft, bessere Versorgung zu bieten",
+    "quote1": "Diese Plattform hat revolutioniert, wie ich komplexe Fälle diagnostiziere. Der KI-Assistent liefert Erkenntnisse, die ich übersehen haben könnte.",
+    "author1": "Dr. Sarah Müller",
+    "title1": "Neurologin, Medizinisches Zentrum Berlin",
+    "quote2": "Die Integration in unsere bestehenden Systeme verlief nahtlos. Mein Team spart täglich Stunden bei administrativen Aufgaben.",
+    "author2": "Dr. Michael Weber",
+    "title2": "Chefarzt, Nordregionalkrankenhaus",
+    "quote3": "Die KI-Analyse von medizinischen Bildern neben der traditionellen Diagnose hat unsere Genauigkeit um über 30% verbessert.",
+    "author3": "Dr. Emma Schmidt",
+    "title3": "Radiologin, Westliches Gesundheitssystem"
+  },
+  "cta": {
+    "heading": "Erleben Sie die Zukunft des Gesundheitswesens",
+    "subheading": "Buchen Sie eine Demonstration, um zu sehen, wie unsere intelligente medizinische Plattform Ihre Praxis transformieren kann",
+    "button": "Demo buchen"
   }
 }

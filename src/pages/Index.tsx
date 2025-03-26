@@ -3,6 +3,10 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import PartnersSection from '../components/PartnersSection';
+import FeaturesSection from '../components/FeaturesSection';
+import TestimonialsSection from '../components/TestimonialsSection';
+import CallToAction from '../components/CallToAction';
+import FloatingElements from '../components/FloatingElements';
 import { VideoPlayerDemo } from '../components/VideoPlayerDemo';
 import { useTranslation } from 'react-i18next';
 
@@ -17,7 +21,8 @@ const Index = () => {
   }, [i18n]);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      <FloatingElements />
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
@@ -28,6 +33,9 @@ const Index = () => {
           </h2>
           <VideoPlayerDemo />
         </div>
+        <FeaturesSection />
+        <TestimonialsSection />
+        <CallToAction />
       </main>
     </div>
   );
