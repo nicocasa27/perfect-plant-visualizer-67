@@ -14,43 +14,32 @@ const HeroSection = () => {
       setTimeout(() => {
         setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
         setIsChanging(false);
-      }, 500);
+      }, 500); // Wait for fade-out to complete
     }, 2000);
     
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden min-h-[70vh] flex items-center bg-white">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-4 md:gap-6">
-          <div className="text-right z-10">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black">
-              Intelligent
+    <section className="relative py-16 md:py-20 overflow-hidden min-h-[70vh] flex items-center justify-center">
+      <div className="container mx-auto">
+        <div className="relative flex flex-col items-center">
+          <div className="z-10 text-center">
+            <h1 className="title-xl text-center font-medium max-w-7xl text-black">
+              <span className="block mb-4">Intelligent Medical</span>
+              <div className="flex justify-center items-center mb-2">
+                <CirclePlant />
+              </div>
+              <span className="inline-block min-w-40 px-4 py-2 bg-gray-100 rounded-lg shadow-sm">
+                <span className={`inline-block text-blue-600 ${isChanging ? 'animate-fade-out' : 'animate-fade-in'}`}>
+                  {roles[currentRoleIndex]}
+                </span>
+              </span>
             </h1>
+            <p className="text-lg md:text-xl max-w-2xl text-center mt-6 mx-auto text-black">
+              Advanced AI for healthcare professionals that analyzes medical data, creates documentation, and assists in clinical decision-making.
+            </p>
           </div>
-          
-          <div className="flex justify-center mx-auto w-full max-w-[280px] md:max-w-[320px]">
-            <CirclePlant />
-          </div>
-          
-          <div className="text-left z-10">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black">
-              Medical
-            </h1>
-          </div>
-        </div>
-        
-        <div className="mt-6 md:mt-8 text-center">
-          <div className="inline-block">
-            <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold text-blue-600 ${isChanging ? 'animate-fade-out' : 'animate-fade-in'}`}>
-              {roles[currentRoleIndex]}
-            </h2>
-          </div>
-          
-          <p className="text-sm md:text-base max-w-2xl text-center mt-4 md:mt-6 mx-auto text-black">
-            Advanced AI for healthcare professionals that analyzes medical data, creates documentation, and assists in clinical decision-making.
-          </p>
         </div>
       </div>
     </section>
