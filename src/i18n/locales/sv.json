@@ -1,0 +1,14 @@
+
+{
+  "watchVideo": "Se hur vår plattform fungerar",
+  "navigation": {
+    "services": "Tjänster",
+    "blog": "Blogg",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "appointment": "Boka tid"
+  },
+  "toast": {
+    "redirected": "Omdirigerad till den svenska versionen baserat på din plats"
+  }
+}

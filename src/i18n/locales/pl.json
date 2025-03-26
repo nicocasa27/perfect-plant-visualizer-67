@@ -1,0 +1,14 @@
+
+{
+  "watchVideo": "Zobacz, jak działa nasza platforma",
+  "navigation": {
+    "services": "Usługi",
+    "blog": "Blog",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "appointment": "Umów wizytę"
+  },
+  "toast": {
+    "redirected": "Przekierowano do polskiej wersji na podstawie Twojej lokalizacji"
+  }
+}

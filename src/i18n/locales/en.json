@@ -1,0 +1,14 @@
+
+{
+  "watchVideo": "Watch How Our Platform Works",
+  "navigation": {
+    "services": "Services",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "appointment": "Book Appointment"
+  },
+  "toast": {
+    "redirected": "Redirected to English version based on your location"
+  }
+}

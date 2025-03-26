@@ -1,11 +1,14 @@
 
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { detectUserCountry, getLanguageFromCountry } from "../utils/languageDetection";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 const LanguageRedirect: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { i18n, t } = useTranslation();
   const [isRedirecting, setIsRedirecting] = useState(true);
 
   useEffect(() => {
@@ -22,10 +25,15 @@ const LanguageRedirect: React.FC = () => {
         const language = getLanguageFromCountry(countryCode);
         
         // Only redirect if we're on the root path and not already on a language page
-        const currentPath = window.location.pathname;
-        if (currentPath === "/" && language !== "en") {
+        if (location.pathname === "/" && language !== "en") {
+          // Change the language in i18n
+          await i18n.changeLanguage(language);
+          
+          // Navigate to the language-specific page
           navigate(`/${language}`, { replace: true });
-          toast(`Redirected to ${language.toUpperCase()} version based on your location`);
+          
+          // Show toast notification in the user's language
+          toast(t("toast.redirected"));
         }
         
         // Mark as redirected to prevent loops
@@ -38,7 +46,7 @@ const LanguageRedirect: React.FC = () => {
     };
 
     redirectToLanguage();
-  }, [navigate]);
+  }, [navigate, location.pathname, i18n, t]);
 
   // Render nothing - this is just a utility component
   return null;

@@ -1,0 +1,14 @@
+
+{
+  "watchVideo": "Sehen Sie, wie unsere Plattform funktioniert",
+  "navigation": {
+    "services": "Dienstleistungen",
+    "blog": "Blog",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "appointment": "Termin buchen"
+  },
+  "toast": {
+    "redirected": "Auf Basis Ihres Standorts zur deutschen Version weitergeleitet"
+  }
+}
