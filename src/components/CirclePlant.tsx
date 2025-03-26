@@ -5,7 +5,10 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const CirclePlant = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
   
   // Transform values based on scroll
   const yPosition = useTransform(scrollYProgress, [0, 0.2], [0, -100]);
