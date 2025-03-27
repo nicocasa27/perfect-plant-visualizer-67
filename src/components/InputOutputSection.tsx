@@ -6,16 +6,16 @@ import { FileText, Image, Video, AudioLines, FileCheck, Stethoscope, Pill, Arrow
 // Audio wave animation component
 const AudioWaves = () => {
   return (
-    <div className="audio-wave-container flex items-center h-10 gap-[3px]">
-      {[...Array(8)].map((_, i) => (
+    <div className="audio-wave-container flex items-center h-6 gap-[2px]">
+      {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className="w-1 bg-gold rounded-full"
+          className="w-[2px] bg-gold rounded-full"
           animate={{
             height: [
+              `${Math.floor(Math.random() * 10) + 5}px`,
               `${Math.floor(Math.random() * 15) + 10}px`,
-              `${Math.floor(Math.random() * 30) + 20}px`,
-              `${Math.floor(Math.random() * 15) + 10}px`
+              `${Math.floor(Math.random() * 10) + 5}px`
             ]
           }}
           transition={{
@@ -67,15 +67,25 @@ const ConnectionLine = ({ startRef, endRef, index }) => {
       const endX = endRect.left + endRect.width / 2;
       const endY = endRect.top + endRect.height / 2;
       
+      // Calculate angle to determine where line meets the circle
+      const angle = Math.atan2(endY - startY, endX - startX);
+      
+      // Radius of the central circle
+      const radius = endRect.width / 2;
+      
+      // Point where line meets the circle
+      const circleX = endX - radius * Math.cos(angle);
+      const circleY = endY - radius * Math.sin(angle);
+      
       // Adjust to be relative to SVG container
       const container = document.getElementById('connection-svg').getBoundingClientRect();
       const relStartX = startX - container.left;
       const relStartY = startY - container.top;
-      const relEndX = endX - container.left;
-      const relEndY = endY - container.top;
+      const relCircleX = circleX - container.left;
+      const relCircleY = circleY - container.top;
       
-      // Create curved path
-      setPath(`M ${relStartX} ${relStartY} Q ${(relStartX + relEndX) / 2} ${(relStartY + relEndY) / 2 - 30} ${relEndX} ${relEndY}`);
+      // Create curved path that stops at the circle boundary
+      setPath(`M ${relStartX} ${relStartY} Q ${(relStartX + relCircleX) / 2} ${(relStartY + relCircleY) / 2 - 20} ${relCircleX} ${relCircleY}`);
     };
     
     updatePath();
@@ -87,8 +97,8 @@ const ConnectionLine = ({ startRef, endRef, index }) => {
   return (
     <motion.path
       d={path}
-      stroke="rgba(179, 155, 103, 0.7)"
-      strokeWidth="2"
+      stroke="rgba(179, 155, 103, 0.5)"
+      strokeWidth="1.5"
       fill="transparent"
       initial={{ pathLength: 0, opacity: 0 }}
       animate={{ pathLength: 1, opacity: 1 }}
@@ -118,7 +128,7 @@ const InputOutputSection = () => {
     { 
       id: 'video',
       content: (
-        <div className="rounded-lg overflow-hidden w-full h-full bg-dark/5">
+        <div className="rounded-full overflow-hidden w-full h-full bg-dark/5">
           <video 
             src="https://blbldezytmeerjvebjax.supabase.co/storage/v1/object/public/vid//ai%20(1).mp4" 
             className="w-full h-full object-cover" 
@@ -133,7 +143,7 @@ const InputOutputSection = () => {
     { 
       id: 'image',
       content: (
-        <div className="rounded-lg overflow-hidden w-full h-full bg-dark/5">
+        <div className="rounded-full overflow-hidden w-full h-full bg-dark/5">
           <img 
             src="https://blbldezytmeerjvebjax.supabase.co/storage/v1/object/public/vid//mri.png" 
             alt="MRI Scan" 
@@ -146,8 +156,8 @@ const InputOutputSection = () => {
     { 
       id: 'text',
       content: (
-        <div className="p-2 text-xs font-mono text-left h-full overflow-y-auto bg-dark/5 rounded-lg">
-          <TextReveal text="Patient: 45 y/o male, presenting with 3-day history of severe headache, photophobia, and neck stiffness. Temp: 101.2°F. Previous history of sinusitis treated 2 months ago. Allergic to penicillin." className="text-xs" />
+        <div className="p-1 text-[8px] font-mono text-left h-full overflow-y-auto bg-dark/5 rounded-full">
+          <TextReveal text="Patient: 45 y/o male..." className="text-[8px]" />
         </div>
       ),
       description: 'Patient medical history'
@@ -159,8 +169,8 @@ const InputOutputSection = () => {
     { 
       id: 'notes',
       content: (
-        <div className="p-2 text-xs font-mono text-left h-full overflow-y-auto bg-dark/5 rounded-lg">
-          <TextReveal text="Physical exam reveals positive Kernig's and Brudzinski's signs. Pupils equal and reactive. Fundoscopic exam shows no papilledema." className="text-xs" />
+        <div className="p-1 text-[8px] font-mono text-left h-full overflow-y-auto bg-dark/5 rounded-full">
+          <TextReveal text="Physical exam reveals..." className="text-[8px]" />
         </div>
       ),
       description: 'Comprehensive documentation'
@@ -168,11 +178,8 @@ const InputOutputSection = () => {
     { 
       id: 'diagnosis',
       content: (
-        <div className="p-2 text-xs font-mono text-left h-full overflow-y-auto bg-dark/5 rounded-lg">
-          <TextReveal text="Differential Diagnosis:
-1. Bacterial Meningitis (G00.9)
-2. Viral Meningitis (A87.9)
-3. Subarachnoid Hemorrhage (I60.9)" className="text-xs" />
+        <div className="p-1 text-[8px] font-mono text-left h-full overflow-y-auto bg-dark/5 rounded-full">
+          <TextReveal text="Differential Diagnosis" className="text-[8px]" />
         </div>
       ),
       description: 'Accurate diagnostic assessment'
@@ -180,7 +187,7 @@ const InputOutputSection = () => {
     { 
       id: 'imaging',
       content: (
-        <div className="rounded-lg overflow-hidden w-full h-full bg-dark/5">
+        <div className="rounded-full overflow-hidden w-full h-full bg-dark/5">
           <img 
             src="https://blbldezytmeerjvebjax.supabase.co/storage/v1/object/public/vid//mri%20(1).png" 
             alt="X-ray Analysis" 
@@ -193,24 +200,21 @@ const InputOutputSection = () => {
     { 
       id: 'orders',
       content: (
-        <div className="relative p-2 text-xs font-mono text-left h-full overflow-y-auto bg-dark/5 rounded-lg">
-          <TextReveal text="Recommended Orders:
-1. Ceftriaxone 2g IV q12h
-2. Vancomycin 15-20 mg/kg IV q8-12h
-3. Dexamethasone 10mg IV" className="text-xs" />
+        <div className="relative p-1 text-[8px] font-mono text-left h-full overflow-y-auto bg-dark/5 rounded-full">
+          <TextReveal text="Medication orders" className="text-[8px]" />
           
           <motion.button
             onClick={() => setSendAnimation(true)}
-            className="absolute bottom-2 right-2 bg-gold hover:bg-gold-dark text-white rounded-full p-1.5 transition-colors"
+            className="absolute bottom-1 right-1 bg-gold hover:bg-gold-dark text-white rounded-full p-0.5 transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Send size={14} />
+            <Send size={8} />
           </motion.button>
           
           {sendAnimation && (
             <motion.div 
-              className="absolute inset-0 bg-green-500/20 flex items-center justify-center"
+              className="absolute inset-0 bg-green-500/20 flex items-center justify-center rounded-full"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -221,7 +225,7 @@ const InputOutputSection = () => {
                 animate={{ scale: 1.2, opacity: [0, 1, 0] }}
                 transition={{ duration: 1.5 }}
               >
-                <Pill className="text-green-600" size={32} />
+                <Pill className="text-green-600" size={16} />
               </motion.div>
             </motion.div>
           )}
@@ -238,21 +242,23 @@ const InputOutputSection = () => {
           {/* Inputs - Left Side */}
           <div className="lg:col-span-4 grid grid-cols-2 gap-6">
             {inputs.map((input, index) => (
-              <motion.div
-                key={input.id}
-                ref={inputRefs[index]}
-                className="bg-white shadow-lg rounded-lg overflow-hidden aspect-square flex flex-col"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="flex-1 p-4">
-                  {input.content}
-                </div>
-                <div className="p-3 text-sm text-center border-t border-gray-100">
+              <div className="flex flex-col items-center">
+                <motion.div
+                  key={input.id}
+                  ref={inputRefs[index]}
+                  className="bg-white shadow-lg rounded-full overflow-hidden w-16 h-16 flex items-center justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="w-full h-full flex items-center justify-center">
+                    {input.content}
+                  </div>
+                </motion.div>
+                <div className="mt-2 text-xs text-center max-w-[120px]">
                   {input.description}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
           
@@ -260,7 +266,7 @@ const InputOutputSection = () => {
           <div className="lg:col-span-1 flex justify-center items-center">
             <motion.div 
               ref={centerRef}
-              className="w-16 h-16 bg-dark rounded-full flex items-center justify-center relative shadow-[0_0_30px_rgba(0,0,0,0.2)]"
+              className="w-24 h-24 bg-dark rounded-full flex items-center justify-center relative shadow-[0_0_30px_rgba(0,0,0,0.2)]"
               initial={{ scale: 0 }}
               animate={{ 
                 scale: 1,
@@ -289,21 +295,23 @@ const InputOutputSection = () => {
           {/* Outputs - Right Side */}
           <div className="lg:col-span-4 grid grid-cols-2 gap-6">
             {outputs.map((output, index) => (
-              <motion.div
-                key={output.id}
-                ref={outputRefs[index]}
-                className="bg-white shadow-lg rounded-lg overflow-hidden aspect-square flex flex-col"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="flex-1 p-4">
-                  {output.content}
-                </div>
-                <div className="p-3 text-sm text-center border-t border-gray-100">
+              <div className="flex flex-col items-center">
+                <motion.div
+                  key={output.id}
+                  ref={outputRefs[index]}
+                  className="bg-white shadow-lg rounded-full overflow-hidden w-16 h-16 flex items-center justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="w-full h-full flex items-center justify-center">
+                    {output.content}
+                  </div>
+                </motion.div>
+                <div className="mt-2 text-xs text-center max-w-[120px]">
                   {output.description}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
