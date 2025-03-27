@@ -1,6 +1,5 @@
 
 import React, { useEffect } from 'react';
-import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import PartnersSection from '../components/PartnersSection';
 import StatsSection from '../components/StatsSection';
@@ -25,7 +24,6 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col relative">
       <FloatingElements />
-      <Navbar />
       <main className="flex-grow">
         <HeroSection />
         <div className="container mx-auto my-16 px-4">
