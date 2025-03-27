@@ -10,6 +10,7 @@ import FloatingElements from '../components/FloatingElements';
 import { VideoPlayerDemo } from '../components/VideoPlayerDemo';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SimpleHeader from '../components/SimpleHeader';
 
 const LanguageIndex = () => {
   const { language = "en" } = useParams<{ language: string }>();
@@ -25,6 +26,7 @@ const LanguageIndex = () => {
   return (
     <div className="min-h-screen flex flex-col relative">
       <FloatingElements />
+      <SimpleHeader />
       <main className="flex-grow">
         <HeroSection />
         <div className="container mx-auto my-16 px-4">

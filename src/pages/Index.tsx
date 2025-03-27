@@ -10,6 +10,7 @@ import FloatingElements from '../components/FloatingElements';
 import { VideoPlayerDemo } from '../components/VideoPlayerDemo';
 import { useTranslation } from 'react-i18next';
 import MultimodalSection from '../components/MultimodalSection';
+import SimpleHeader from '../components/SimpleHeader';
 
 const Index = () => {
   const { t, i18n } = useTranslation();
@@ -24,6 +25,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col relative">
       <FloatingElements />
+      <SimpleHeader />
       <main className="flex-grow">
         <HeroSection />
         <div className="container mx-auto my-16 px-4">

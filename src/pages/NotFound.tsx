@@ -1,6 +1,7 @@
 
 import React, { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
+import SimpleHeader from '../components/SimpleHeader';
 
 const NotFound = () => {
   const location = useLocation();
@@ -14,6 +15,7 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gold-light">
+      <SimpleHeader />
       <div className="flex-grow flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-7xl font-bold mb-4 text-dark">404</h1>
