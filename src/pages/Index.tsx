@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import PartnersSection from '../components/PartnersSection';
+import InputOutputSection from '../components/InputOutputSection';
 import StatsSection from '../components/StatsSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CallToAction from '../components/CallToAction';
@@ -34,6 +35,7 @@ const Index = () => {
           <VideoPlayerDemo />
         </div>
         <PartnersSection />
+        <InputOutputSection />
         <StatsSection />
         <TestimonialsSection />
         <CallToAction />
