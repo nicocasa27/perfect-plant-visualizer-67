@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import LanguageIndex from "./pages/LanguageIndex";
 import LanguageRedirect from "./components/LanguageRedirect";
+import Research from "./pages/Research";
 
 const queryClient = new QueryClient();
 
@@ -22,14 +23,12 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/:language" element={<LanguageIndex />} />
-          <Route path="/:language/pricing" element={<LanguageIndex />} />
-          <Route path="/:language/research" element={<LanguageIndex />} />
+          <Route path="/research" element={<Research />} />
+          <Route path="/:language/research" element={<Research />} />
           <Route path="/:language/about" element={<LanguageIndex />} />
           <Route path="/:language/contact" element={<LanguageIndex />} />
           <Route path="/:language/team" element={<LanguageIndex />} />
           <Route path="/:language/appointment" element={<LanguageIndex />} />
-          <Route path="/pricing" element={<Index />} />
-          <Route path="/research" element={<Index />} />
           <Route path="/about" element={<Index />} />
           <Route path="/contact" element={<Index />} />
           <Route path="/team" element={<Index />} />

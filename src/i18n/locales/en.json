@@ -66,5 +66,34 @@
     "research": "Research",
     "about": "About",
     "contact": "Contact"
+  },
+  "research": {
+    "title": "Research Publications",
+    "description": "Explore our latest scientific research and publications in the field of medical AI and diagnostics.",
+    "searchPlaceholder": "Search by title, author, or category",
+    "uploadPaper": "Upload Research",
+    "tableTitle": "Title",
+    "tableAuthors": "Authors",
+    "tableDate": "Publication Date",
+    "tableCategory": "Category",
+    "tableActions": "Actions",
+    "noResults": "No research papers found matching your search.",
+    "uploadTitle": "Upload Research Paper",
+    "uploadDescription": "Share your research with the medical community. All submissions will be reviewed before publication.",
+    "uploadSuccess": "Research paper submitted",
+    "uploadPending": "Your research paper will be reviewed before being published.",
+    "formTitle": "Paper Title",
+    "formTitlePlaceholder": "Enter the title of your research paper",
+    "formAuthors": "Authors",
+    "formAuthorsPlaceholder": "e.g. Smith J., Johnson M., etc.",
+    "formCategory": "Category",
+    "formCategoryPlaceholder": "e.g. Neurology, Oncology, etc.",
+    "formFile": "PDF File",
+    "formFileDescription": "Upload your research paper in PDF format.",
+    "submitButton": "Upload Research"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "submit": "Submit"
   }
 }
