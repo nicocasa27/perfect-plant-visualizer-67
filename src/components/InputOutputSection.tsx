@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FileText, Image, Video, AudioLines, FileCheck, Stethoscope, Pill, ArrowUpRight, Send } from 'lucide-react';
+import { Send, Pill } from 'lucide-react';
 
 // Audio wave animation component
 const AudioWaves = () => {
@@ -67,7 +67,7 @@ const ConnectionLine = ({ startRef, endRef, index }) => {
       const endX = endRect.left + endRect.width / 2;
       const endY = endRect.top + endRect.height / 2;
       
-      // Calculate angle to determine where line meets the circle
+      // Calculate angle to determine where line meets the square
       const angle = Math.atan2(endY - startY, endX - startX);
       
       // Radius of the central circle
@@ -84,8 +84,12 @@ const ConnectionLine = ({ startRef, endRef, index }) => {
       const relCircleX = circleX - container.left;
       const relCircleY = circleY - container.top;
       
-      // Create curved path that stops at the circle boundary
-      setPath(`M ${relStartX} ${relStartY} Q ${(relStartX + relCircleX) / 2} ${(relStartY + relCircleY) / 2 - 20} ${relCircleX} ${relCircleY}`);
+      // Create smooth curved path that stops at the circle boundary
+      // More organized curve with less extreme bending
+      const curveOffsetX = (relCircleX - relStartX) * 0.15;
+      const curveOffsetY = (relCircleY - relStartY) * 0.15;
+      
+      setPath(`M ${relStartX} ${relStartY} C ${relStartX + curveOffsetX} ${relStartY + curveOffsetY}, ${relCircleX - curveOffsetX} ${relCircleY - curveOffsetY}, ${relCircleX} ${relCircleY}`);
     };
     
     updatePath();
@@ -128,7 +132,7 @@ const InputOutputSection = () => {
     { 
       id: 'video',
       content: (
-        <div className="rounded-full overflow-hidden w-full h-full bg-dark/5">
+        <div className="w-full h-full bg-dark/5">
           <video 
             src="https://blbldezytmeerjvebjax.supabase.co/storage/v1/object/public/vid//ai%20(1).mp4" 
             className="w-full h-full object-cover" 
@@ -143,7 +147,7 @@ const InputOutputSection = () => {
     { 
       id: 'image',
       content: (
-        <div className="rounded-full overflow-hidden w-full h-full bg-dark/5">
+        <div className="w-full h-full bg-dark/5">
           <img 
             src="https://blbldezytmeerjvebjax.supabase.co/storage/v1/object/public/vid//mri.png" 
             alt="MRI Scan" 
@@ -156,7 +160,7 @@ const InputOutputSection = () => {
     { 
       id: 'text',
       content: (
-        <div className="p-1 text-[8px] font-mono text-left h-full overflow-y-auto bg-dark/5 rounded-full">
+        <div className="p-1 text-[8px] font-mono text-left h-full overflow-y-auto bg-dark/5">
           <TextReveal text="Patient: 45 y/o male..." className="text-[8px]" />
         </div>
       ),
@@ -169,7 +173,7 @@ const InputOutputSection = () => {
     { 
       id: 'notes',
       content: (
-        <div className="p-1 text-[8px] font-mono text-left h-full overflow-y-auto bg-dark/5 rounded-full">
+        <div className="p-1 text-[8px] font-mono text-left h-full overflow-y-auto bg-dark/5">
           <TextReveal text="Physical exam reveals..." className="text-[8px]" />
         </div>
       ),
@@ -178,7 +182,7 @@ const InputOutputSection = () => {
     { 
       id: 'diagnosis',
       content: (
-        <div className="p-1 text-[8px] font-mono text-left h-full overflow-y-auto bg-dark/5 rounded-full">
+        <div className="p-1 text-[8px] font-mono text-left h-full overflow-y-auto bg-dark/5">
           <TextReveal text="Differential Diagnosis" className="text-[8px]" />
         </div>
       ),
@@ -187,7 +191,7 @@ const InputOutputSection = () => {
     { 
       id: 'imaging',
       content: (
-        <div className="rounded-full overflow-hidden w-full h-full bg-dark/5">
+        <div className="w-full h-full bg-dark/5">
           <img 
             src="https://blbldezytmeerjvebjax.supabase.co/storage/v1/object/public/vid//mri%20(1).png" 
             alt="X-ray Analysis" 
@@ -200,12 +204,12 @@ const InputOutputSection = () => {
     { 
       id: 'orders',
       content: (
-        <div className="relative p-1 text-[8px] font-mono text-left h-full overflow-y-auto bg-dark/5 rounded-full">
+        <div className="relative p-1 text-[8px] font-mono text-left h-full overflow-y-auto bg-dark/5">
           <TextReveal text="Medication orders" className="text-[8px]" />
           
           <motion.button
             onClick={() => setSendAnimation(true)}
-            className="absolute bottom-1 right-1 bg-gold hover:bg-gold-dark text-white rounded-full p-0.5 transition-colors"
+            className="absolute bottom-1 right-1 bg-gold hover:bg-gold-dark text-white rounded-sm p-0.5 transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -214,7 +218,7 @@ const InputOutputSection = () => {
           
           {sendAnimation && (
             <motion.div 
-              className="absolute inset-0 bg-green-500/20 flex items-center justify-center rounded-full"
+              className="absolute inset-0 bg-green-500/20 flex items-center justify-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -242,11 +246,10 @@ const InputOutputSection = () => {
           {/* Inputs - Left Side */}
           <div className="lg:col-span-4 grid grid-cols-2 gap-6">
             {inputs.map((input, index) => (
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center" key={input.id}>
                 <motion.div
-                  key={input.id}
                   ref={inputRefs[index]}
-                  className="bg-white shadow-lg rounded-full overflow-hidden w-16 h-16 flex items-center justify-center"
+                  className="bg-white shadow-lg w-20 h-20 flex items-center justify-center"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -295,11 +298,10 @@ const InputOutputSection = () => {
           {/* Outputs - Right Side */}
           <div className="lg:col-span-4 grid grid-cols-2 gap-6">
             {outputs.map((output, index) => (
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center" key={output.id}>
                 <motion.div
-                  key={output.id}
                   ref={outputRefs[index]}
-                  className="bg-white shadow-lg rounded-full overflow-hidden w-16 h-16 flex items-center justify-center"
+                  className="bg-white shadow-lg w-20 h-20 flex items-center justify-center"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
