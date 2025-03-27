@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, Shield } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 const Footer = () => {
@@ -16,6 +16,35 @@ const Footer = () => {
       {/* Divider line */}
       <div className="container mx-auto px-4">
         <Separator className="mb-12 bg-gold/30" />
+        
+        {/* Compliance Section */}
+        <div className="mb-12 text-center">
+          <h3 className="text-2xl font-medium mb-8">Regulatory Compliance</h3>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-6">
+            <div className="flex flex-col items-center">
+              <img 
+                src="/lovable-uploads/17b3e330-6089-4e14-88f5-6a2b3c92115f.png" 
+                alt="GDPR Compliance" 
+                className="h-24 mb-2"
+              />
+              <p className="font-medium">GDPR Compliant</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <img 
+                src="/lovable-uploads/7435c095-2477-4261-b13f-20e6ad868d35.png" 
+                alt="HIPAA Compliance" 
+                className="h-24 mb-2"
+              />
+              <p className="font-medium">HIPAA Compliant</p>
+            </div>
+          </div>
+          <div className="text-gray-600 max-w-3xl mx-auto mb-8">
+            <p>
+              Your data is protected with enterprise-grade security and encryption. We maintain strict compliance with healthcare data protection regulations worldwide. We have a strict no-retention policy — we don't train our models on patient data or save any patient information. Your sensitive medical information remains private and secure at all times.
+            </p>
+          </div>
+          <Separator className="mt-8 mb-8 bg-gold/20" />
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
           <div className="space-y-4">
