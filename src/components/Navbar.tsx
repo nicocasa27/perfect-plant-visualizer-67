@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ChevronDown, CreditCard } from 'lucide-react';
+import { ChevronRight, ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
@@ -23,7 +23,6 @@ const Navbar = () => {
         
         <nav className="hidden md:flex items-center space-x-8">
           <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}`} className="nav-item uppercase text-sm">{t('navigation.home', 'Home')}</Link>
-          <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/pricing`} className="nav-item uppercase text-sm">{t('navigation.pricing', 'Pricing')}</Link>
           <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/research`} className="nav-item uppercase text-sm">{t('navigation.research')}</Link>
           <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/about`} className="nav-item uppercase text-sm">{t('navigation.about')}</Link>
           <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/contact`} className="nav-item uppercase text-sm">{t('navigation.contact')}</Link>
@@ -48,10 +47,6 @@ const Navbar = () => {
         <div className="md:hidden bg-white shadow-lg rounded-b-lg mt-1 p-4 absolute left-0 right-0 z-50">
           <nav className="flex flex-col space-y-3">
             <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}`} className="nav-item uppercase text-sm">{t('navigation.home', 'Home')}</Link>
-            <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/pricing`} className="nav-item uppercase text-sm flex items-center">
-              <CreditCard size={16} className="mr-2 text-gold-light" />
-              {t('navigation.pricing', 'Pricing')}
-            </Link>
             <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/research`} className="nav-item uppercase text-sm">{t('navigation.research')}</Link>
             <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/about`} className="nav-item uppercase text-sm">{t('navigation.about')}</Link>
             <Link to={`/${currentLanguage === 'en' ? '' : currentLanguage}/contact`} className="nav-item uppercase text-sm">{t('navigation.contact')}</Link>
