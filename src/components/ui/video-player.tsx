@@ -1,7 +1,6 @@
-
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Play, Pause, Volume2, Volume1, VolumeX } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -46,7 +45,7 @@ const CustomSlider = ({
   );
 };
 
-const VideoPlayer = ({ src }: { src: string }) => {
+const VideoPlayer = ({ src, autoPlay = true }: { src: string; autoPlay?: boolean }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
@@ -56,6 +55,26 @@ const VideoPlayer = ({ src }: { src: string }) => {
   const [showControls, setShowControls] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+
+  useEffect(() => {
+    if (videoRef.current && autoPlay) {
+      videoRef.current.muted = true;
+      setIsMuted(true);
+      setVolume(0);
+      
+      const playPromise = videoRef.current.play();
+      
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((error) => {
+            console.error("Auto-play failed:", error);
+          });
+      }
+    }
+  }, [autoPlay]);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -132,6 +151,9 @@ const VideoPlayer = ({ src }: { src: string }) => {
         onTimeUpdate={handleTimeUpdate}
         src={src}
         onClick={togglePlay}
+        playsInline
+        autoPlay={autoPlay}
+        muted={isMuted}
       />
 
       <AnimatePresence>

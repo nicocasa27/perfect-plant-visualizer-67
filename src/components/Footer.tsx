@@ -141,6 +141,7 @@ const Footer = () => {
         
         <div className="mt-8 pt-4 border-t border-dark/10 text-sm text-dark/70">
           <p className="mb-4">{t('footer.disclaimer')}</p>
+          <p className="mb-4 font-medium">Disclaimer: Sarovi is intended for professional healthcare providers and doctors only, not for patients. Clinical judgment should always be exercised alongside any AI recommendations.</p>
         </div>
         
         <div className="border-t border-dark/10 mt-4 pt-4 text-center text-dark/60">
