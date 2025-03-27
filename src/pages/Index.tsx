@@ -34,6 +34,22 @@ const Index = () => {
           <VideoPlayerDemo />
         </div>
         <PartnersSection />
+        
+        {/* AI Visualization Embed */}
+        <div className="container mx-auto my-16 px-4">
+          <div className="ai-visualization-container" style={{width: '100%', height: '600px', overflow: 'hidden', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'}}>
+            <iframe 
+              src="https://ai.sarovi.pl/embed" 
+              title="AI Visualization" 
+              width="100%" 
+              height="100%" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              style={{border: 'none'}}
+            />
+          </div>
+        </div>
+        
         <StatsSection />
         <TestimonialsSection />
         <CallToAction />
