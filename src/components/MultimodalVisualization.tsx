@@ -14,12 +14,7 @@ const MultimodalVisualization = () => {
         Experience Sarovi's Multimodal Intelligence
       </motion.h2>
       
-      <div className="relative mt-10 w-full h-[600px] overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-gradient-to-br from-cream via-purple-50/20 to-cream-light/80 opacity-40 z-10 pointer-events-none"
-          aria-hidden="true"
-        />
-        
+      <div className="relative mt-10 w-full h-[600px]">
         <iframe 
           src="https://ai.sarovi.pl/embed" 
           title="Sarovi Multimodal AI Visualization" 
@@ -28,12 +23,7 @@ const MultimodalVisualization = () => {
           frameBorder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           style={{ border: 'none' }}
-          className="z-0"
-        />
-        
-        <div 
-          className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-cream to-transparent z-10 pointer-events-none"
-          aria-hidden="true"
+          className="rounded-lg"
         />
       </div>
       
