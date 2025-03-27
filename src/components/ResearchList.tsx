@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Search, Calendar, Download, Eye, Upload } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Search, Calendar, Download, Eye } from 'lucide-react';
 import { Input } from '@/components/ui/input';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import ResearchUploadDialog from './ResearchUploadDialog';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 // Mock data for research papers
 const MOCK_PAPERS = [
@@ -17,6 +17,7 @@ const MOCK_PAPERS = [
     category: 'Neurology',
     url: '#',
     pdfUrl: '#',
+    abstract: 'This study explores how artificial intelligence can improve diagnostic accuracy in various neurological disorders, with a focus on early detection and treatment planning.'
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ const MOCK_PAPERS = [
     category: 'Oncology',
     url: '#',
     pdfUrl: '#',
+    abstract: 'A comprehensive approach to cancer detection using multiple data modalities including imaging, blood biomarkers, and genetic testing for improved early diagnosis.'
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ const MOCK_PAPERS = [
     category: 'General Medicine',
     url: '#',
     pdfUrl: '#',
+    abstract: 'This longitudinal study examines the effectiveness of machine learning algorithms in predicting patient outcomes across a wide range of medical conditions.'
   },
   {
     id: 4,
@@ -44,6 +47,7 @@ const MOCK_PAPERS = [
     category: 'Radiology',
     url: '#',
     pdfUrl: '#',
+    abstract: 'Recent developments in deep learning techniques for medical image analysis, with applications in radiology, pathology, and surgical planning.'
   },
   {
     id: 5,
@@ -53,13 +57,13 @@ const MOCK_PAPERS = [
     category: 'Emergency Medicine',
     url: '#',
     pdfUrl: '#',
+    abstract: 'This paper presents the results of a clinical validation study of an AI assistant designed to support emergency medicine physicians in triage and initial diagnosis.'
   },
 ];
 
 const ResearchList = () => {
   const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
-  const [showUploadDialog, setShowUploadDialog] = useState(false);
   
   // Filter papers based on search term
   const filteredPapers = MOCK_PAPERS.filter(paper => 
@@ -70,85 +74,56 @@ const ResearchList = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row justify-between gap-4">
-        {/* Search */}
-        <div className="relative w-full md:w-96">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
-          <Input
-            placeholder={t('research.searchPlaceholder', 'Search by title, author, or category')}
-            className="pl-10"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-        
-        {/* Upload button (for future implementation) */}
-        <Button 
-          onClick={() => setShowUploadDialog(true)}
-          className="bg-primary hover:bg-primary/90"
-        >
-          <Upload size={18} className="mr-2" />
-          {t('research.uploadPaper', 'Upload Research')}
-        </Button>
+      {/* Search */}
+      <div className="relative max-w-md mx-auto">
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+        <Input
+          placeholder={t('research.searchPlaceholder', 'Search by title, author, or category')}
+          className="pl-10"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
       
-      {/* Research papers table */}
-      <div className="overflow-x-auto rounded-lg border">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[40%]">{t('research.tableTitle', 'Title')}</TableHead>
-              <TableHead className="w-[25%]">{t('research.tableAuthors', 'Authors')}</TableHead>
-              <TableHead className="w-[15%]">
-                <div className="flex items-center">
-                  <Calendar size={16} className="mr-2" />
-                  {t('research.tableDate', 'Date')}
+      {/* Research papers grid */}
+      {filteredPapers.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          {filteredPapers.map((paper) => (
+            <Card key={paper.id} className="h-full flex flex-col">
+              <CardHeader>
+                <div className="flex items-start justify-between">
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20 mb-2">
+                    {paper.category}
+                  </Badge>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Calendar size={14} className="mr-1" />
+                    {new Date(paper.date).toLocaleDateString()}
+                  </div>
                 </div>
-              </TableHead>
-              <TableHead className="w-[10%]">{t('research.tableCategory', 'Category')}</TableHead>
-              <TableHead className="w-[10%] text-right">{t('research.tableActions', 'Actions')}</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {filteredPapers.length > 0 ? (
-              filteredPapers.map((paper) => (
-                <TableRow key={paper.id}>
-                  <TableCell className="font-medium">{paper.title}</TableCell>
-                  <TableCell>{paper.authors}</TableCell>
-                  <TableCell>{new Date(paper.date).toLocaleDateString()}</TableCell>
-                  <TableCell>{paper.category}</TableCell>
-                  <TableCell className="text-right">
-                    <div className="flex justify-end gap-2">
-                      <Button variant="ghost" size="sm" asChild>
-                        <a href={paper.url} target="_blank" rel="noopener noreferrer">
-                          <Eye size={16} />
-                        </a>
-                      </Button>
-                      <Button variant="ghost" size="sm" asChild>
-                        <a href={paper.pdfUrl} download>
-                          <Download size={16} />
-                        </a>
-                      </Button>
-                    </div>
-                  </TableCell>
-                </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell colSpan={5} className="text-center py-8 text-gray-500">
-                  {t('research.noResults', 'No research papers found matching your search.')}
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      </div>
-      
-      {/* Upload Dialog (for future implementation) */}
-      <ResearchUploadDialog 
-        open={showUploadDialog} 
-        onOpenChange={setShowUploadDialog} 
-      />
+                <CardTitle className="text-xl">{paper.title}</CardTitle>
+                <CardDescription>{paper.authors}</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-sm text-muted-foreground">{paper.abstract}</p>
+              </CardContent>
+              <CardFooter className="flex justify-end gap-2 pt-4 border-t">
+                <Button variant="outline" size="sm" className="flex items-center gap-1">
+                  <Eye size={16} />
+                  {t('research.viewPaper', 'View')}
+                </Button>
+                <Button variant="outline" size="sm" className="flex items-center gap-1">
+                  <Download size={16} />
+                  {t('research.downloadPaper', 'Download')}
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-12 text-muted-foreground">
+          {t('research.noResults', 'No research papers found matching your search.')}
+        </div>
+      )}
     </div>
   );
 };

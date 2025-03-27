@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -8,6 +8,14 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    // Close mobile menu if open
+    if (isOpen) setIsOpen(false);
+    // Navigate to the path
+    navigate(path);
+  };
 
   return (
     <header className="w-full py-5">

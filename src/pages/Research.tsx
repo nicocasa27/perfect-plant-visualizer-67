@@ -17,12 +17,14 @@ const Research = () => {
       <Navbar />
       <main className="flex-grow py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-            {t('research.title', 'Research Publications')}
-          </h1>
-          <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
-            {t('research.description', 'Explore our latest scientific research and publications in the field of medical AI and diagnostics.')}
-          </p>
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              {t('research.title', 'Research Publications')}
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              {t('research.description', 'Explore our latest scientific research and publications in the field of medical AI and diagnostics.')}
+            </p>
+          </div>
           
           {/* Research papers grid */}
           <ResearchList />
