@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { FileText, Image, Video, AudioLines, FileCheck, FileMedical, Stethoscope, Pill, ArrowUpRight } from 'lucide-react';
+import { FileText, Image, Video, AudioLines, FileCheck, Stethoscope, Pill, ArrowUpRight } from 'lucide-react';
 
 const AudioWaves = () => {
   return (
@@ -150,7 +150,7 @@ const InputOutputSection = () => {
     { 
       id: 'diagnosis',
       title: 'Diagnosis & ICD Codes',
-      icon: <FileMedical size={24} className="text-gold" />,
+      icon: <FileText size={24} className="text-gold" />,
       content: (
         <div className="p-2 text-sm font-mono text-left h-32 overflow-y-auto bg-dark/5 rounded-lg">
           <TextReveal text="Differential Diagnosis:
